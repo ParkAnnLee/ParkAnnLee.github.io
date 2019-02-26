@@ -401,7 +401,7 @@
                 
               
 
-              <time title="Created: 2019-02-25 20:40:51 / Modified: 21:05:42" itemprop="dateCreated datePublished" datetime="2019-02-25T20:40:51-05:00">2019-02-25</time>
+              <time title="Created: 2019-02-25 20:40:51 / Modified: 22:04:19" itemprop="dateCreated datePublished" datetime="2019-02-25T20:40:51-05:00">2019-02-25</time>
             
 
             
@@ -475,28 +475,18 @@
 <li>Extend to find <code>LCS</code></li>
 </ol>
 <h3 id="notation">Notation</h3>
-<p><code>C[i, j] = len(LCS(x[1..i], y[1..j]))</code> <code>m = len(x)</code>, <code>n = len(y)</code> <code>C[m, n] = len(LCS(x, y))</code></p>
+<p><span class="math inline">\(C[i, j] = len(LCS(x[1..i], y[1..j]))\)</span><br>
+<span class="math inline">\(m = len(x), n = len(y)\)</span><br>
+<span class="math inline">\(C[m, n] = len(LCS(x, y))\)</span></p>
 <h2 id="recurrence-relation">Recurrence relation</h2>
-<p>$ <span class="math display">\[\begin{align*}
-    C[i, j] &amp;= C[i-1, j-1] + 1, \text{if } x[i] = y[j] \\
-    &amp;=max(C[i-1, j], C[i, j-1]), \text{otherwise} \\
-\end{align*}\]</span> $</p>
 <p><span class="math inline">\(\begin{align*}  C[i, j] &amp;= C[i-1, j-1] + 1, \text{if } x[i] = y[j] \\  &amp;=max(C[i-1, j], C[i, j-1]), \text{otherwise} \\ \end{align*}\)</span></p>
-<p><span class="math display">\[\begin{align*}
-    C[i, j] &amp;= C[i-1, j-1] + 1, \text{if } x[i] = y[j] \\
-    &amp;=max(C[i-1, j], C[i, j-1]), \text{otherwise} \\
-\end{align*}\]</span></p>
-<p><span class="math display">\[\begin{align*} 
-x &amp;= a +b+c+d\\
- &amp;= e +f\\
- &amp;= g
-\end{align*}\]</span></p>
 <h2 id="dynamic-programming">Dynamic Programming</h2>
-<p>Hallmark 1: optimal substructure Hallmark 2: overlapping substructure</p>
+<p>Hallmark 1: optimal substructure<br>
+Hallmark 2: overlapping substructure</p>
 <p>How many subproblems in total? <code>mn</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[0..m, 0..n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    if C[i, j] is NULL:</span><br><span class="line">        if i ==0 or j == 0:</span><br><span class="line">            C[i, j] = 0</span><br><span class="line">        else: </span><br><span class="line">            if x[i] == y[j]:</span><br><span class="line">                C[i, j] = LCS(x, y, i-1, j-1, C) + 1</span><br><span class="line">            else:</span><br><span class="line">                C[i, j] = max(LCS(x, y, i-1, j, C), LCS(x, y, i, j-1, C))</span><br><span class="line">    return C[i, j]</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[<span class="number">0.</span>.m, <span class="number">0.</span>.n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    <span class="keyword">if</span> C[i, j] <span class="keyword">is</span> NULL:</span><br><span class="line">        <span class="keyword">if</span> i ==<span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">            C[i, j] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>: </span><br><span class="line">            <span class="keyword">if</span> x[i] == y[j]:</span><br><span class="line">                C[i, j] = LCS(x, y, i<span class="number">-1</span>, j<span class="number">-1</span>, C) + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                C[i, j] = max(LCS(x, y, i<span class="number">-1</span>, j, C), LCS(x, y, i, j<span class="number">-1</span>, C))</span><br><span class="line">    <span class="keyword">return</span> C[i, j]</span><br></pre></td></tr></table></figure>
 <p>Complexity = constant per subproblem <span class="math inline">\(\times\)</span> #subproblems= O(mn)</p>
-<p>This can also be done iteratively. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[0..m, 0..n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    for i from 0 to m:</span><br><span class="line">        for j from 0 to n:</span><br><span class="line">            if i ==0 or j == 0:</span><br><span class="line">                C[i, j] = 0</span><br><span class="line">            else: </span><br><span class="line">                if x[i] == y[j]:</span><br><span class="line">                    C[i, j] = LCS(x, y, i-1, j-1, C) + 1</span><br><span class="line">                else:</span><br><span class="line">                    C[i, j] = max(LCS(x, y, i-1, j, C), LCS(x, y, i, j-1, C))</span><br><span class="line">    return C[i, j]</span><br></pre></td></tr></table></figure></p>
+<p>This can also be done iteratively. <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[<span class="number">0.</span>.m, <span class="number">0.</span>.n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">0</span> to m:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> <span class="number">0</span> to n:</span><br><span class="line">            <span class="keyword">if</span> i ==<span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">                C[i, j] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                <span class="keyword">if</span> x[i] == y[j]:</span><br><span class="line">                    C[i, j] = LCS(x, y, i<span class="number">-1</span>, j<span class="number">-1</span>, C) + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    C[i, j] = max(LCS(x, y, i<span class="number">-1</span>, j, C), LCS(x, y, i, j<span class="number">-1</span>, C))</span><br><span class="line">    <span class="keyword">return</span> C[i, j]</span><br></pre></td></tr></table></figure></p>
 <p>Then we can construct a table and trace it back to get the LCS.</p>
 <table>
 <thead>
@@ -603,7 +593,7 @@ x &amp;= a +b+c+d\\
 </tr>
 </tbody>
 </table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">backtrack(C, x, y, i, j):</span><br><span class="line">    if i == 0 or j == 0:</span><br><span class="line">        return &quot;&quot;</span><br><span class="line">    if x[i] == y[j]:</span><br><span class="line">        return backtrack(C, x, y, i-1, j-1) + x[i]</span><br><span class="line">    if C[i-1, j] &gt; C[i, j-1]:</span><br><span class="line">        return backtrack(C, x, y, i-1, j)</span><br><span class="line">    else:</span><br><span class="line">        return backtrack(C, x, y, i, j-1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">backtrack(C, x, y, i, j):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">    <span class="keyword">if</span> x[i] == y[j]:</span><br><span class="line">        <span class="keyword">return</span> backtrack(C, x, y, i<span class="number">-1</span>, j<span class="number">-1</span>) + x[i]</span><br><span class="line">    <span class="keyword">if</span> C[i<span class="number">-1</span>, j] &gt; C[i, j<span class="number">-1</span>]:</span><br><span class="line">        <span class="keyword">return</span> backtrack(C, x, y, i<span class="number">-1</span>, j)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> backtrack(C, x, y, i, j<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
 
           
         
@@ -859,12 +849,17 @@ x &amp;= a +b+c+d\\
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   
-                </div>
               
-            </nav>
+            </div></nav>
           
 
           
@@ -906,7 +901,6 @@ x &amp;= a +b+c+d\\
             
           
           
-
         </div>
       </div>
 
