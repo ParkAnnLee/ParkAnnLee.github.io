@@ -356,6 +356,289 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/2019-02-25-Basic-Algorithms-Lec8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anpu Li">
+      <meta itemprop="description" content="Thoughts, Works, and Collection">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anpu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/25/2019-02-25-Basic-Algorithms-Lec8/" class="post-title-link" itemprop="url">2019-02-25 Basic Algorithms Lec8</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-25 20:40:51 / Modified: 20:54:30" itemprop="dateCreated datePublished" datetime="2019-02-25T20:40:51-05:00">2019-02-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Largest-Common-Subsequence"><a href="#Largest-Common-Subsequence" class="headerlink" title="Largest Common Subsequence"></a>Largest Common Subsequence</h1><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>A subsequence of a string <code>x</code> is a set of characters appearing left-to-right in <code>x</code> but not necessarily consecutively. </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><table>
+<thead>
+<tr>
+<th><code>x</code></th>
+<th><code>ABBCABAC</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>are</td>
+<td><code>A</code> <code>ABB</code> <code>CAC</code></td>
+</tr>
+<tr>
+<td>are not</td>
+<td><code>BBBB</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Naive-algorithm"><a href="#Naive-algorithm" class="headerlink" title="Naive algorithm"></a>Naive algorithm</h2><ol>
+<li>Generate all possible subsequences of <code>x</code></li>
+<li>Check each one against <code>y</code></li>
+</ol>
+<h3 id="Simplification"><a href="#Simplification" class="headerlink" title="Simplification"></a>Simplification</h3><ol>
+<li>Find <code>len(LCS(x,y))</code></li>
+<li>Extend to find <code>LCS</code></li>
+</ol>
+<h3 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h3><p><code>C[i, j] = len(LCS(x[1..i], y[1..j]))</code><br><code>m = len(x)</code>, <code>n = len(y)</code><br><code>C[m, n] = len(LCS(x, y))</code></p>
+<h2 id="Recurrence-relation"><a href="#Recurrence-relation" class="headerlink" title="Recurrence relation"></a>Recurrence relation</h2><p>$<br>\begin{align*}<br>    C[i, j] &amp;= C[i-1, j-1] + 1, \text{if } x[i] = y[j] \\<br>    &amp;=max(C[i-1, j], C[i, j-1]), \text{otherwise} \\<br>\end{align*}<br>$</p>
+<p>$<br>\begin{align*}<br>x &amp;= a +b+c+d\\<br> &amp;= e +f\\<br> &amp;= g<br>\end{align*}<br>$</p>
+<h2 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h2><p>Hallmark 1: optimal substructure<br>Hallmark 2: overlapping substructure  </p>
+<p>How many subproblems in total? <code>mn</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[0..m, 0..n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    if C[i, j] is NULL:</span><br><span class="line">        if i ==0 or j == 0:</span><br><span class="line">            C[i, j] = 0</span><br><span class="line">        else: </span><br><span class="line">            if x[i] == y[j]:</span><br><span class="line">                C[i, j] = LCS(x, y, i-1, j-1, C) + 1</span><br><span class="line">            else:</span><br><span class="line">                C[i, j] = max(LCS(x, y, i-1, j, C), LCS(x, y, i, j-1, C))</span><br><span class="line">    return C[i, j]</span><br></pre></td></tr></table></figure>
+<p>Complexity = constant per subproblem $\times$ #subproblems= O(mn)</p>
+<p>This can also be done iteratively.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[0..m, 0..n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    for i from 0 to m:</span><br><span class="line">        for j from 0 to n:</span><br><span class="line">            if i ==0 or j == 0:</span><br><span class="line">                C[i, j] = 0</span><br><span class="line">            else: </span><br><span class="line">                if x[i] == y[j]:</span><br><span class="line">                    C[i, j] = LCS(x, y, i-1, j-1, C) + 1</span><br><span class="line">                else:</span><br><span class="line">                    C[i, j] = max(LCS(x, y, i-1, j, C), LCS(x, y, i, j-1, C))</span><br><span class="line">    return C[i, j]</span><br></pre></td></tr></table></figure></p>
+<p>Then we can construct a table and trace it back to get the LCS.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">backtrack(C, x, y, i, j):</span><br><span class="line">    if i == 0 or j == 0:</span><br><span class="line">        return &quot;&quot;</span><br><span class="line">    if x[i] == y[j]:</span><br><span class="line">        return backtrack(C, x, y, i-1, j-1) + x[i]</span><br><span class="line">    if C[i-1, j] &gt; C[i, j-1]:</span><br><span class="line">        return backtrack(C, x, y, i-1, j)</span><br><span class="line">    else:</span><br><span class="line">        return backtrack(C, x, y, i, j-1)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -533,7 +816,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -541,6 +824,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
               
             </nav>
           
@@ -775,6 +1071,8 @@
 
   
   
+    
+      
     
       
     
