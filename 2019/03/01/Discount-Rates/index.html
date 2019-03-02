@@ -104,10 +104,12 @@
 <meta property="og:site_name" content="Anpu&#39;s Blog">
 <meta property="og:description" content="Discount Rates The discount rate should be consistent with both the riskness and the type of cash flows being discounted.  Equity verus Firm: If FCFE, then use cost of equity. IF FCFF, then use cos">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-01T23:12:29.310Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/01/Discount-Rates/ERP-Esitimation-Procedure.png">
+<meta property="og:updated_time" content="2019-03-02T22:41:13.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Discount Rates">
 <meta name="twitter:description" content="Discount Rates The discount rate should be consistent with both the riskness and the type of cash flows being discounted.  Equity verus Firm: If FCFE, then use cost of equity. IF FCFF, then use cos">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/01/Discount-Rates/ERP-Esitimation-Procedure.png">
 
 
 
@@ -400,12 +402,24 @@
                 
               
 
-              <time title="Created: 2019-03-01 18:07:17 / Modified: 18:12:29" itemprop="dateCreated datePublished" datetime="2019-03-01T18:07:17-05:00">2019-03-01</time>
+              <time title="Created: 2019-03-01 18:07:17" itemprop="dateCreated datePublished" datetime="2019-03-01T18:07:17-05:00">2019-03-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-02 17:41:13" itemprop="dateModified" datetime="2019-03-02T17:41:13-05:00">2019-03-02</time>
               
             
           </span>
@@ -513,9 +527,9 @@
 <h3 id="competing-market-risk-models">Competing "Market Risk" Models</h3>
 <table>
 <colgroup>
-<col style="width: 9%">
+<col style="width: 8%">
 <col style="width: 24%">
-<col style="width: 65%">
+<col style="width: 67%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -548,7 +562,105 @@
 </tbody>
 </table>
 <p>In the CAPM, the cost of equity: <span class="math display">\[\text{Cost of Equity} = \text{Riskfree Rate} + \text{Equity Beta}\times\text{Equity Risk Premium}\]</span></p>
-<p>To use any risk and return model, you need - A risk free rate as a base - A single equity risk premium (in the CAPM) or factor risk premiums in the multifactor models - A beta (in the CAPM) or betas (in multifactor models)</p>
+<p>To use any risk and return model, you need</p>
+<ul>
+<li>A risk free rate as a base</li>
+<li>A single equity risk premium (in the CAPM) or factor risk premiums in the multifactor models</li>
+<li>A beta (in the CAPM) or betas (in multifactor models)</li>
+</ul>
+<h2 id="discount-rate-i-the-riskfree-rate">Discount Rate I: The Riskfree Rate</h2>
+<p>On a riskfree investment, the actural return is equal to the expected return. Therefore, there is no variance around the expected return.</p>
+<p>For an investment to be risk free, it has to have:</p>
+<ul>
+<li>No default risk</li>
+<li>No reinvestment risk</li>
+</ul>
+<p>It follows then that if asked to estimate a risk free rate:</p>
+<ol type="1">
+<li><strong>Timeline matters</strong>: The risk free rates will depend on when the cash flow is expected to occur and will vary across time. (1yr, 2yrs, 10yrs will generate different rates)</li>
+<li><strong>Currency matters</strong>: A risk free rate is currency-specific and can be different for different currencies.</li>
+<li><strong>Not all government securites are risk free</strong>: Some governments face default risk so the rates on the bonds issued are not risk free.</li>
+</ol>
+<h3 id="three-ways-to-sovereign-default-spread">Three Ways to Sovereign Default Spread</h3>
+<ol type="1">
+<li><strong>Sovereign dollar/euro denomiated bonds</strong>: Find soverign bonds denomiated in US dollars issued by an emerging sovereign.
+<ul>
+<li>Default spread = Emerging Government Bond Rate (in US $) - US Treasury Bond Rate with the same maturity</li>
+</ul></li>
+<li><strong>CDS spreads</strong>: Obtain the trated value for a sovereign Credit Default Swap (CDS) for the emerging government.
+<ul>
+<li>Defalut spread = Sovereign CDS spread (with perhaps adjustment for CDS market frictions)</li>
+</ul></li>
+<li><strong>Sovereign-rating bashed spread</strong>: Average of the spread for other countries with the same sovereign rating.</li>
+</ol>
+<h4 id="example">Example</h4>
+<p>The Brazilian government bond rate in nominal reais on January 1, 2019 was 9.18%. To get to a riskfree rate in nominal reais, we can use one of three approaches.</p>
+<ul>
+<li>Approach 1: Government Bond spread
+<ul>
+<li>The 2023 Brazil bond, denominated in US dollars, has a spread of 1.30% over the US treasury bond rate.</li>
+<li>Riskfree rate in $R = 9.18% - 1.30% = 7.88%</li>
+</ul></li>
+<li>Approach 2: The CDS Spread
+<ul>
+<li>The CDS spread for Brazil, adjusted for the US CDS spread was 2.57%.</li>
+<li>Riskfree rate in $R = 9.18% - 2.57% = 6.61%</li>
+</ul></li>
+<li>Approach 3: The Rating based spread
+<ul>
+<li>Brazil has a Ba2 local currency rating from Moody’s. The default spread for that rating is 3.39%</li>
+<li>Riskfree rate in $R = 9.18% - 3.39% = 5.79%</li>
+</ul></li>
+</ul>
+<h3 id="alternative-approach">Alternative Approach</h3>
+<ol type="1">
+<li>Build up approach: The risk free rate in any country can be written as the sum of two variables: <span class="math display">\[\text{Risk free rate} = \text{Expected Inflation in currency} + \text{Expected real interest rate}\]</span> The expected real interest rate can be computed in two ways:
+<ol type="1">
+<li>US TIPs</li>
+<li>Real growth in the economy Thus, if the expected inflation rate in a country is 15% and the TIPs rate is 1%, the risk free rate is 16%.</li>
+</ol></li>
+<li>US $ rate &amp; Differential Inflation: Alternatively, you can scale up the US $ risk free rate by the differential inflation between the US $ and the currency in question <span class="math display">\[\text{Riskfree Rate}_{Currency} = (1 + \text{Riskfree Rate}_{US\$})\frac{1 + \text{Expected Inflation}_{Currency}}{1 + \text{Expected Inflation}_{US\$}} - 1\]</span> Thus, if the US $ risk free rate is 2.00%, the inflation rate in the foreign currency is 15% and the inflation rate in US $ is 1.5%, the foreign currency risk free rate is: <span class="math display">\[\text{Riskfree Rate} = 1.02\frac{1.15}{1.015} = 15.57\%\]</span></li>
+</ol>
+<h3 id="negative-interest-rates">Negative Interest Rates</h3>
+<p>TBD</p>
+<h2 id="discount-rates-ii-the-equity-risk-premium">Discount Rates II: The Equity Risk Premium</h2>
+<h3 id="simplest-way-the-country-default-spread">Simplest Way: The Country Default Spread</h3>
+<ul>
+<li><strong>Default spread for country</strong>: In this approach, the country equity risk premium is set equal to the default spread for the country, estimated in one of three ways:
+<ul>
+<li>The default spread on a dollar denominated bond issued by the country. (In January 2019, that spread was the yield for the Brazilian US dollar bond) was 1.30%.</li>
+<li>The sovereign CDS spread for the country. In January 2019, the ten year CDS spread for Brazil, adjusted for the US CDS, was 2.57%.</li>
+<li>The default spread based on the local currency rating for the country. Brazil’s sovereign local currency rating is Ba2 and the default spread for a Ba2 rated sovereign was about 3.39% in January 2019.</li>
+</ul></li>
+<li>Add the default spread to a “mature” market premium: This default spread is added on to the mature market premium to arrive at the total equity risk premium for Brazil, assuming a mature market premium of 5.96%.
+<ul>
+<li>Country Risk Premium for Brazil = 3.39% (Using the Ba2 CDS)</li>
+<li>Total ERP for Brazil = 5.96% + 3.39% = 9.35%</li>
+</ul></li>
+</ul>
+<h3 id="an-equity-volatility-based-approach">An Equity Volatility Based Approach</h3>
+<p>This approach drwas on the standard deviation of two equity markets, the emerging market in question and a base market (usually the US). The total equity risk premium (ERP) for the emerging markte is then written as: <span class="math display">\[\text{Total ERP} = \text{Risk Premium}_{\text{US}}\times\frac{\sigma_{\text{Country Equity}}}{\sigma_{\text{US Equity}}}\]</span></p>
+<p>Example:</p>
+<ol type="1">
+<li>Assume the ERP for the US is 5.69%</li>
+<li>Assume the standard deviation in the Bovespa (Brazilian equity) is 30% and the standard deviation for the S&amp;P 500 (US equity) is 18%.</li>
+<li>Total ERP for Brazil <span class="math inline">\(= 5.95\%\times\frac{30\%}{18\%}=9.93\%\)</span></li>
+<li>Country equity risk premium for Brazil <span class="math inline">\(= 9.93\%-5.96\%=3.97\%\)</span></li>
+</ol>
+<h3 id="a-melded-approach-to-estimating-the-additional-country-erp">A Melded Approach to Estimating the Additional Country ERP</h3>
+<p>Country ratings measure default resk. While default risk permiums and equity risk premiums are highly correlated, one would expect equity spreads to be higher than debt spreads.</p>
+<p>Hence, a practice is to multiply the bond default spread by the relative volatility of stock and bond prices in that market. Using this approach for Brazil in January 2019, we would get:</p>
+<ul>
+<li><span class="math inline">\(\text{Country ERP} = \text{Default spread on country bond}\times\frac{\sigma_\text{Country Equity}}{\sigma_\text{Country Bond}}\)</span>
+<ul>
+<li>Standard Deviation in Bovespa <span class="math inline">\(= 30\%\)</span></li>
+<li>Standard Deviation in Brazil government bond <span class="math inline">\(= 20\%\)</span></li>
+<li>Default spread for Brazil <span class="math inline">\(= 3.39\%\)</span></li>
+</ul></li>
+<li>Brazil Country Euqity Risk Premium <span class="math inline">\(= 3.39\%\times\frac{30\%}{20\%} = 5.09\%\)</span></li>
+<li>Brazil Total ERP <span class="math inline">\(=\)</span> Mature Market Premium + CRP <span class="math inline">\(= 5.96\% + 5.09\% = 11.05\%\)</span></li>
+</ul>
+<img src="/2019/03/01/Discount-Rates/ERP-Esitimation-Procedure.png" title="ERP Esitimation Procedure">
 
       
     </div>
@@ -689,8 +801,6 @@
                     
                       
                     
-                      
-                    
                     <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
@@ -772,7 +882,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#discount-rates"><span class="nav-number">1.</span> <span class="nav-text">Discount Rates</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#types-of-risks"><span class="nav-number">1.0.1.</span> <span class="nav-text">Types of Risks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-role-of-the-marginal-investor"><span class="nav-number">1.0.2.</span> <span class="nav-text">The Role of the Marginal Investor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#not-all-risk-counts"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Not all risk counts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#risk-through-whose-eyes"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Risk through whose eyes?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-diversification-effect"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">The diversification effect</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#competing-market-risk-models"><span class="nav-number">1.0.3.</span> <span class="nav-text">Competing &quot;Market Risk&quot; Models</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#discount-rates"><span class="nav-number">1.</span> <span class="nav-text">Discount Rates</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#types-of-risks"><span class="nav-number">1.0.1.</span> <span class="nav-text">Types of Risks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-role-of-the-marginal-investor"><span class="nav-number">1.0.2.</span> <span class="nav-text">The Role of the Marginal Investor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#not-all-risk-counts"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Not all risk counts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#risk-through-whose-eyes"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Risk through whose eyes?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-diversification-effect"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">The diversification effect</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#competing-market-risk-models"><span class="nav-number">1.0.3.</span> <span class="nav-text">Competing &quot;Market Risk&quot; Models</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#discount-rate-i-the-riskfree-rate"><span class="nav-number">1.1.</span> <span class="nav-text">Discount Rate I: The Riskfree Rate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#three-ways-to-sovereign-default-spread"><span class="nav-number">1.1.1.</span> <span class="nav-text">Three Ways to Sovereign Default Spread</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#example"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alternative-approach"><span class="nav-number">1.1.2.</span> <span class="nav-text">Alternative Approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#negative-interest-rates"><span class="nav-number">1.1.3.</span> <span class="nav-text">Negative Interest Rates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#discount-rates-ii-the-equity-risk-premium"><span class="nav-number">1.2.</span> <span class="nav-text">Discount Rates II: The Equity Risk Premium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#simplest-way-the-country-default-spread"><span class="nav-number">1.2.1.</span> <span class="nav-text">Simplest Way: The Country Default Spread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#an-equity-volatility-based-approach"><span class="nav-number">1.2.2.</span> <span class="nav-text">An Equity Volatility Based Approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-melded-approach-to-estimating-the-additional-country-erp"><span class="nav-number">1.2.3.</span> <span class="nav-text">A Melded Approach to Estimating the Additional Country ERP</span></a></li></ol></li></ol></div>
             
 
           </div>
