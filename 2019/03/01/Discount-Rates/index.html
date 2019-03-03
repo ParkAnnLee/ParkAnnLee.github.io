@@ -105,7 +105,7 @@
 <meta property="og:description" content="Discount Rates The discount rate should be consistent with both the riskness and the type of cash flows being discounted.  Equity verus Firm: If FCFE, then use cost of equity. IF FCFF, then use cos">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/03/01/Discount-Rates/ERP-Esitimation-Procedure.png">
-<meta property="og:updated_time" content="2019-03-02T22:41:13.331Z">
+<meta property="og:updated_time" content="2019-03-03T02:03:36.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Discount Rates">
 <meta name="twitter:description" content="Discount Rates The discount rate should be consistent with both the riskness and the type of cash flows being discounted.  Equity verus Firm: If FCFE, then use cost of equity. IF FCFF, then use cos">
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-02 17:41:13" itemprop="dateModified" datetime="2019-03-02T17:41:13-05:00">2019-03-02</time>
+                <time title="Modified: 2019-03-02 21:03:36" itemprop="dateModified" datetime="2019-03-02T21:03:36-05:00">2019-03-02</time>
               
             
           </span>
@@ -661,6 +661,142 @@
 <li>Brazil Total ERP <span class="math inline">\(=\)</span> Mature Market Premium + CRP <span class="math inline">\(= 5.96\% + 5.09\% = 11.05\%\)</span></li>
 </ul>
 <img src="/2019/03/01/Discount-Rates/ERP-Esitimation-Procedure.png" title="ERP Esitimation Procedure">
+<h3 id="from-country-equity-risk-premiums-to-corporate-equity-risk-premiums">From Country Equity Risk Premiums to Corporate Equity Risk Premiums</h3>
+<ol type="1">
+<li>Assume that every company in the country is equally exposed to country risk. In this case,
+<ul>
+<li><span class="math inline">\(\text{E(Return)} = \text{Riskfree Rate} + \text{CRP} + \text{Beta(Mature ERP)}\)</span></li>
+<li>Implicitly, this is what you are assuming when you use the local government's dollar borrowing rate as your risk free rate. (Fake riskfree = real + crp)</li>
+</ul></li>
+<li>Assume that a company's exposure to country risk is similar to its exposure to other market risk.
+<ul>
+<li><span class="math inline">\(\text{E(Return)} = \text{Riskfree Rate} + \text{Beta(Mature ERP + CRP)}\)</span></li>
+</ul></li>
+<li>Treat country risk as a separate risk factor and allow firms to have different exposures to country risk (perhaps based upon the proportion of their revenues com from non-domestiv sales)
+<ul>
+<li><span class="math inline">\(\text{E(Return)} = \text{Riskfree Rate} + x\cdot\text{Mature ERP} + y\cdot\text{CRP}\)</span></li>
+</ul></li>
+</ol>
+<p>Mature ERP = Mature Market Equity Risk Premium<br>
+CRP = Additional Country Risk Premium</p>
+<h4 id="approaches-12-estimating-country-risk-premium-exposure">Approaches 1&amp;2: Estimating country risk premium exposure</h4>
+<ul>
+<li><strong>Location-based CRP</strong>: The standard approach in valuation is to attach a country risk premium to a company based on its country of incorporation. Thus, if you are an Indian company, you are assumed to be exposed to the Indian country risk premium. A developed market company is assumed to be unexposed to emerging market risk.</li>
+<li><strong>Operation-based CRP</strong>: This is a more reasonable modified version. The country risk premium for a company can be computed as a weighted average of the country risk premiums fo the countries that it does business in, with the weights based on revenues or operating income. If a company is exposed to risk in dozens of countries, you can take a weighted average of the risk premiums by region.</li>
+</ul>
+<h4 id="operation-based-crp-single-versus-multiple-emerging-markets">Operation-based CRP: Single versus Multiple Emerging Markets</h4>
+<ul>
+<li><strong>Single emerging market</strong>: Embraer, in 2004, reported that it derived 3% of its revenues in Brazil and the balance from mature markets. The mature market ERP in 2004 was 5% and Brazil's CRP was 7.89%.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Revenues</th>
+<th>Total ERP</th>
+<th>CRP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>US and other mature markets</td>
+<td>97%</td>
+<td>5.00%</td>
+<td>0.00%</td>
+</tr>
+<tr class="even">
+<td>Brazil</td>
+<td>3%</td>
+<td>12.89%</td>
+<td>7.89%</td>
+</tr>
+<tr class="odd">
+<td><strong>Embraer</strong></td>
+<td></td>
+<td><strong>5.24%</strong></td>
+<td><strong>0.24%</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Multiple emerging markets</strong>: Ambev, the Brazilian-based beverage company, reported revenues from the follwing countries during 2011.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Revenues</th>
+<th style="text-align: center;">%</th>
+<th style="text-align: center;">Total ERP</th>
+<th style="text-align: center;">CRP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Argentina</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">9.31%</td>
+<td style="text-align: center;">15.00%</td>
+<td style="text-align: center;">9.00%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bolivia</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1.96%</td>
+<td style="text-align: center;">10.88%</td>
+<td style="text-align: center;">4.88%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Brazil</td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">63.73%</td>
+<td style="text-align: center;">8.63%</td>
+<td style="text-align: center;">2.63%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Canada</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">11.27%</td>
+<td style="text-align: center;">6.00%</td>
+<td style="text-align: center;">0.00%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Chile</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">3.43%</td>
+<td style="text-align: center;">7.05%</td>
+<td style="text-align: center;">1.05%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ecuador</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2.94%</td>
+<td style="text-align: center;">12.75%</td>
+<td style="text-align: center;">6.75%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Paraguay</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.47%</td>
+<td style="text-align: center;">12.00%</td>
+<td style="text-align: center;">6.00%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Peru</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">5.88%</td>
+<td style="text-align: center;">9.00%</td>
+<td style="text-align: center;">3.00%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Ambev</strong></td>
+<td style="text-align: center;"><strong>204</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>9.11%</strong></td>
+<td style="text-align: center;"><strong>3.11%</strong></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -882,7 +1018,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#discount-rates"><span class="nav-number">1.</span> <span class="nav-text">Discount Rates</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#types-of-risks"><span class="nav-number">1.0.1.</span> <span class="nav-text">Types of Risks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-role-of-the-marginal-investor"><span class="nav-number">1.0.2.</span> <span class="nav-text">The Role of the Marginal Investor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#not-all-risk-counts"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Not all risk counts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#risk-through-whose-eyes"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Risk through whose eyes?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-diversification-effect"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">The diversification effect</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#competing-market-risk-models"><span class="nav-number">1.0.3.</span> <span class="nav-text">Competing &quot;Market Risk&quot; Models</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#discount-rate-i-the-riskfree-rate"><span class="nav-number">1.1.</span> <span class="nav-text">Discount Rate I: The Riskfree Rate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#three-ways-to-sovereign-default-spread"><span class="nav-number">1.1.1.</span> <span class="nav-text">Three Ways to Sovereign Default Spread</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#example"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alternative-approach"><span class="nav-number">1.1.2.</span> <span class="nav-text">Alternative Approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#negative-interest-rates"><span class="nav-number">1.1.3.</span> <span class="nav-text">Negative Interest Rates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#discount-rates-ii-the-equity-risk-premium"><span class="nav-number">1.2.</span> <span class="nav-text">Discount Rates II: The Equity Risk Premium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#simplest-way-the-country-default-spread"><span class="nav-number">1.2.1.</span> <span class="nav-text">Simplest Way: The Country Default Spread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#an-equity-volatility-based-approach"><span class="nav-number">1.2.2.</span> <span class="nav-text">An Equity Volatility Based Approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-melded-approach-to-estimating-the-additional-country-erp"><span class="nav-number">1.2.3.</span> <span class="nav-text">A Melded Approach to Estimating the Additional Country ERP</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#discount-rates"><span class="nav-number">1.</span> <span class="nav-text">Discount Rates</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#types-of-risks"><span class="nav-number">1.0.1.</span> <span class="nav-text">Types of Risks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-role-of-the-marginal-investor"><span class="nav-number">1.0.2.</span> <span class="nav-text">The Role of the Marginal Investor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#not-all-risk-counts"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Not all risk counts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#risk-through-whose-eyes"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Risk through whose eyes?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-diversification-effect"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">The diversification effect</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#competing-market-risk-models"><span class="nav-number">1.0.3.</span> <span class="nav-text">Competing &quot;Market Risk&quot; Models</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#discount-rate-i-the-riskfree-rate"><span class="nav-number">1.1.</span> <span class="nav-text">Discount Rate I: The Riskfree Rate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#three-ways-to-sovereign-default-spread"><span class="nav-number">1.1.1.</span> <span class="nav-text">Three Ways to Sovereign Default Spread</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#example"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alternative-approach"><span class="nav-number">1.1.2.</span> <span class="nav-text">Alternative Approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#negative-interest-rates"><span class="nav-number">1.1.3.</span> <span class="nav-text">Negative Interest Rates</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#discount-rates-ii-the-equity-risk-premium"><span class="nav-number">1.2.</span> <span class="nav-text">Discount Rates II: The Equity Risk Premium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#simplest-way-the-country-default-spread"><span class="nav-number">1.2.1.</span> <span class="nav-text">Simplest Way: The Country Default Spread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#an-equity-volatility-based-approach"><span class="nav-number">1.2.2.</span> <span class="nav-text">An Equity Volatility Based Approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-melded-approach-to-estimating-the-additional-country-erp"><span class="nav-number">1.2.3.</span> <span class="nav-text">A Melded Approach to Estimating the Additional Country ERP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from-country-equity-risk-premiums-to-corporate-equity-risk-premiums"><span class="nav-number">1.2.4.</span> <span class="nav-text">From Country Equity Risk Premiums to Corporate Equity Risk Premiums</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#approaches-12-estimating-country-risk-premium-exposure"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Approaches 1&amp;2: Estimating country risk premium exposure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#operation-based-crp-single-versus-multiple-emerging-markets"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Operation-based CRP: Single versus Multiple Emerging Markets</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
