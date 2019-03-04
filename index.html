@@ -418,7 +418,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-02 21:03:36" itemprop="dateModified" datetime="2019-03-02T21:03:36-05:00">2019-03-02</time>
+                <time title="Modified: 2019-03-04 13:59:50" itemprop="dateModified" datetime="2019-03-04T13:59:50-05:00">2019-03-04</time>
               
             
           </span>
@@ -791,6 +791,51 @@ CRP = Additional Country Risk Premium</p>
 </tr>
 </tbody>
 </table>
+<h4 id="problems-with-these-approaches">Problems with these approaches</h4>
+<ul>
+<li><strong>Focus just on revenues</strong>: To the extent that revenues are the only variable that you consider, when weighting risk exposure across markets, you may be missing other exposures to country risk. For instance, an emerging market company that gets the bulk of its revenues outside the country (in a developed market) may still have all of its production facilities in the emerging market.</li>
+<li><strong>Exposure not adjusted or based upon beta</strong>: To the extent that the country risk premium is multiplied by a beta, we are assuming that beta in addition to measuring exposure to all other macro economic risk also measures exposure to country risk.</li>
+</ul>
+<h4 id="approach-3-estimate-a-lambda-for-country-risk">Approach 3: Estimate a lambda for country risk</h4>
+<p>Country risk exposure is affected by where you get your revenues and where your production happens, but there are a host of other variables that also affect this exposure, including:</p>
+<ul>
+<li>Use of risk management products: Companies can use both options/futures markets and insurance to hedge some or a significant portion of country risk.</li>
+<li>Government "national" interests: There are sectores that are vieewed as vital to the national interests, and governments oftern play a key role in these companies, either officially or unofficially. These sectores are more exposed to country risk.</li>
+</ul>
+<p>It is conceivable that there is a richer mersure of country risk that incorporated all of the variables that drive country risk in one measure. That is "lambda" by A.</p>
+<h4 id="a-revenue-based-lambda">A revenue-based lambda</h4>
+<p>The factor <span class="math inline">\(\lambda\)</span> measures the relative exposure of a firm to country risk. One simplistic solution would be to fo the following: <span class="math display">\[ \lambda = \frac{\text{\% of revenues domestically}_{firm}}{\text{\% of revenues domecstically}_{average\ firm}} \]</span></p>
+<p>Consider two firms - Tata Motors and Tata Consulting Services, both Indian companies. In 2008-2009, Tata Motors got about 91.37% of its revenues in India and TCS got 7.62%. The average Indian firm gets about 80% of tis revenues in India:<br>
+<span class="math inline">\(\lambda_{TM} = \frac{91\%}{80\%} = 1.14\)</span><br>
+<span class="math inline">\(\lambda_{TCS} = \frac{7.62\%}{80\%} = 0.09\)</span></p>
+<p>There are two implications</p>
+<ol type="1">
+<li>A company's risk exposure is determined by where it does business and not by where it is incorporated.</li>
+<li>Firms might be able to actively manage their country risk exposures.</li>
+</ol>
+<h3 id="something-to-be-continued">Something to be continued</h3>
+<h2 id="discount-rates-iii-relative-risk-measures">Discount Rates III: Relative Risk Measures</h2>
+<h3 id="the-capm-beta-the-most-used-yet-misused-risk-measure">The CAPM Beta: The Most Used (yet Misused) Risk Measure</h3>
+<p>The standard procedure for estimating betas is to regress stock returns <span class="math inline">\(R_j\)</span> against market return <span class="math inline">\(R_m\)</span><br>
+<span class="math display">\[ R_j = a + bR_m \]</span> where <span class="math inline">\(a\)</span> is the intercept and <span class="math inline">\(b\)</span> is the slope of the regression</p>
+<p>The slope fo the regression corresponds to the beta of the stock, and measuresthe riskiness of the stock.</p>
+<p>This beta has three problems:</p>
+<ol type="1">
+<li>It has high standard error.</li>
+<li>It reflects the firm's business mix over the period of the regression, not the current mix.</li>
+<li>It reflects the firm's average finanical leverage over the period rater than the current leverage.</li>
+</ol>
+<img src="/2019/03/01/Discount-Rates/Measureing-Relative-Risk.png" title="Measureing Relative Risk">
+<img src="/2019/03/01/Discount-Rates/Beta-of-Equity.png" title="Beta of Equity">
+<h4 id="adjusting-for-financial-leverage">Adjusting for financial leverage</h4>
+<ul>
+<li><strong>Conventional approach</strong>: If we assume that debt carries no market risk (has a beta of zero), the beta of equity alone can be written as a function of the unlevered beta and the debt-equity ratio<br>
+<span class="math inline">\(\beta_L = \beta_U(1 + (1-t)\frac{D}{E})\)</span><br>
+In some versions, the tax effect is ignored and there is no (1-t) in the eqution</li>
+<li><strong>Debt adjusted approach</strong>: If beta carries market risk and you can estimate the beta of debt, you can estimate the levered beta as follows<br>
+<span class="math inline">\(\beta_L = \beta_U(1 + (1-t)\frac{D}{E}) - \beta_{debt}(1-t)\frac{D}{E}\)</span><br>
+While the latter is more realistic, estimating betas for debt can be difficult to do.</li>
+</ul>
 
           
         
