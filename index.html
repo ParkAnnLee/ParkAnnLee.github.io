@@ -356,6 +356,224 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/Knapsack-Problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anpu Li">
+      <meta itemprop="description" content="Thoughts, Works, and Collection">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anpu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/06/Knapsack-Problem/" class="post-title-link" itemprop="url">Knapsack Problem</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-06 17:29:37" itemprop="dateCreated datePublished" datetime="2019-03-06T17:29:37-05:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-08 17:32:53" itemprop="dateModified" datetime="2019-03-08T17:32:53-05:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/03/06/Knapsack-Problem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/06/Knapsack-Problem/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="knapsack-problem">Knapsack Problem</h1>
+<h2 id="problem">Problem</h2>
+<h3 id="input">Input:</h3>
+<p>S[1..n] and V[1..n] - arrays of positive intergers positive integer C (capacity)</p>
+<h3 id="output">Output:</h3>
+<p>Subset of items that fit into the knopsock and give max value</p>
+<h3 id="example">Example</h3>
+<p>C = 8 | S | V | |---|----| | 1 | 15 | | 5 | 10 | | 3 | 9 | | 4 | 5 |</p>
+<h2 id="solution">Solution</h2>
+<h3 id="possible-solution">Possible solution</h3>
+<p>Consider all subsets and choose the best Complexity <span class="math inline">\(O(n2^n)\)</span></p>
+<h3 id="open-question">Open question</h3>
+<p>Can we do in polynomial time in n</p>
+<h3 id="notation">Notation</h3>
+<p><code>K[i,j]</code>- the best value we can get with the capacity i and items from 1st to jth</p>
+<h3 id="base-cases">Base Cases</h3>
+<p><code>K[0, j]</code> = 0; K[i, 0] = 0</p>
+<h3 id="recurvie-steps">Recurvie steps</h3>
+<p>Two options</p>
+<ol type="1">
+<li>Do not take the <span class="math inline">\(j^{th}\)</span> item<br>
+<code>K[i, j-1]</code></li>
+<li>Do take the <span class="math inline">\(j^{th}\)</span> item<br>
+<code>K[i-S[j], j-1] + V[j]</code></li>
+</ol>
+<p><code>K[i, j]</code> = <code>max(K[i, j-1], K[i-S[j], j-1] + V[j])</code></p>
+<h3 id="pseudocode">Pseudocode</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Knapsack(C,;; S[1..n], V[1..n])</span><br><span class="line">    init look[0..C, 0..n] with -1&apos;s</span><br><span class="line">    return K(C, n;; S, V, look)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function K(i, j;; S, V, look)</span><br><span class="line">    if look[i, j] != -1</span><br><span class="line">        return look[i,j]</span><br><span class="line">    if j = 0 or i = 0</span><br><span class="line">        look[i, j]</span><br><span class="line">    else</span><br><span class="line">        look[i, j] = max(K(i, j-1, S, V, look), K(i-S[i], j-1, S, V, look)+V[j])</span><br><span class="line">    return look[i,j]</span><br></pre></td></tr></table></figure>
+<h3 id="complexity">Complexity</h3>
+<p><span class="math inline">\(O(nC)\)</span><br>
+Each recursive call takes constant time <code>O(1)</code></p>
+<p>For every i, j K(i, j, S, V, look) can be done at most 2 times, namely from K(i, j+1) and K(i+S[j+1], j+1) &lt;= 2(n+1)(c+1)</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/Discount-Rates/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -418,7 +636,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-04 13:59:50" itemprop="dateModified" datetime="2019-03-04T13:59:50-05:00">2019-03-04</time>
+                <time title="Modified: 2019-03-04 15:30:31" itemprop="dateModified" datetime="2019-03-04T15:30:31-05:00">2019-03-04</time>
               
             
           </span>
@@ -613,7 +831,7 @@
 <li>US TIPs</li>
 <li>Real growth in the economy Thus, if the expected inflation rate in a country is 15% and the TIPs rate is 1%, the risk free rate is 16%.</li>
 </ol></li>
-<li>US $ rate &amp; Differential Inflation: Alternatively, you can scale up the US $ risk free rate by the differential inflation between the US $ and the currency in question <span class="math display">\[\text{Riskfree Rate}_{Currency} = (1 + \text{Riskfree Rate}_{US\$})\frac{1 + \text{Expected Inflation}_{Currency}}{1 + \text{Expected Inflation}_{US\$}} - 1\]</span> Thus, if the US $ risk free rate is 2.00%, the inflation rate in the foreign currency is 15% and the inflation rate in US $ is 1.5%, the foreign currency risk free rate is: <span class="math display">\[\text{Riskfree Rate} = 1.02\frac{1.15}{1.015} = 15.57\%\]</span></li>
+<li>US rate &amp; Differential Inflation: Alternatively, you can scale up the US risk free rate by the differential inflation between the US and the currency in question <span class="math display">\[\text{Riskfree Rate}_{Currency} = (1 + \text{Riskfree Rate}_{US\$})\frac{1 + \text{Expected Inflation}_{Currency}}{1 + \text{Expected Inflation}_{US\$}} - 1\]</span> Thus, if the US dollar risk free rate is 2.00%, the inflation rate in the foreign currency is 15% and the inflation rate in US dollar is 1.5%, the foreign currency risk free rate is: <span class="math display">\[\text{Riskfree Rate} = 1.02\frac{1.15}{1.015} = 15.57\%\]</span></li>
 </ol>
 <h3 id="negative-interest-rates">Negative Interest Rates</h3>
 <p>TBD</p>
@@ -827,7 +1045,7 @@ CRP = Additional Country Risk Premium</p>
 </ol>
 <img src="/2019/03/01/Discount-Rates/Measureing-Relative-Risk.png" title="Measureing Relative Risk">
 <img src="/2019/03/01/Discount-Rates/Beta-of-Equity.png" title="Beta of Equity">
-<h4 id="adjusting-for-financial-leverage">Adjusting for financial leverage</h4>
+<h3 id="adjusting-for-financial-leverage">Adjusting for financial leverage</h3>
 <ul>
 <li><strong>Conventional approach</strong>: If we assume that debt carries no market risk (has a beta of zero), the beta of equity alone can be written as a function of the unlevered beta and the debt-equity ratio<br>
 <span class="math inline">\(\beta_L = \beta_U(1 + (1-t)\frac{D}{E})\)</span><br>
@@ -892,7 +1110,7 @@ While the latter is more realistic, estimating betas for debt can be difficult t
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/Basic-Algorithms-Lec9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/Word-Wrap-Problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anpu Li">
@@ -912,7 +1130,7 @@ While the latter is more realistic, estimating betas for debt can be difficult t
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/27/Basic-Algorithms-Lec9/" class="post-title-link" itemprop="url">Basic Algorithms Lec9</a>
+                <a href="/2019/02/27/Word-Wrap-Problem/" class="post-title-link" itemprop="url">Word Wrap Problem</a>
               
             
           </h1>
@@ -937,16 +1155,46 @@ While the latter is more realistic, estimating betas for debt can be difficult t
                 
               
 
-              <time title="Created: 2019-02-27 12:10:32 / Modified: 12:11:22" itemprop="dateCreated datePublished" datetime="2019-02-27T12:10:32-05:00">2019-02-27</time>
+              <time title="Created: 2019-02-27 12:10:32" itemprop="dateCreated datePublished" datetime="2019-02-27T12:10:32-05:00">2019-02-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-08 17:31:24" itemprop="dateModified" datetime="2019-03-08T17:31:24-05:00">2019-03-08</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -960,8 +1208,8 @@ While the latter is more realistic, estimating betas for debt can be difficult t
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/02/27/Basic-Algorithms-Lec9/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/27/Basic-Algorithms-Lec9/" itemprop="commentCount"></span>
+                <a href="/2019/02/27/Word-Wrap-Problem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/27/Word-Wrap-Problem/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1168,7 +1416,7 @@ While the latter is more realistic, estimating betas for debt can be difficult t
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Basic-Algorithms-Lec8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Largest-Common-Subsequence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anpu Li">
@@ -1188,7 +1436,7 @@ While the latter is more realistic, estimating betas for debt can be difficult t
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/25/Basic-Algorithms-Lec8/" class="post-title-link" itemprop="url">Basic Algorithms Lec8</a>
+                <a href="/2019/02/25/Largest-Common-Subsequence/" class="post-title-link" itemprop="url">Largest Common Subsequence</a>
               
             
           </h1>
@@ -1230,11 +1478,29 @@ While the latter is more realistic, estimating betas for debt can be difficult t
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-27 12:10:49" itemprop="dateModified" datetime="2019-02-27T12:10:49-05:00">2019-02-27</time>
+                <time title="Modified: 2019-03-08 17:32:16" itemprop="dateModified" datetime="2019-03-08T17:32:16-05:00">2019-03-08</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1248,8 +1514,8 @@ While the latter is more realistic, estimating betas for debt can be difficult t
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/02/25/Basic-Algorithms-Lec8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/25/Basic-Algorithms-Lec8/" itemprop="commentCount"></span>
+                <a href="/2019/02/25/Largest-Common-Subsequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/25/Largest-Common-Subsequence/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1682,7 +1948,7 @@ Hallmark 2: overlapping substructure</p>
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1697,7 +1963,9 @@ Hallmark 2: overlapping substructure</p>
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1960,6 +2228,8 @@ Hallmark 2: overlapping substructure</p>
 
   
   
+    
+      
     
       
     
