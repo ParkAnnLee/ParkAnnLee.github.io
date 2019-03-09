@@ -636,7 +636,7 @@ Each recursive call takes constant time <code>O(1)</code></p>
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-04 15:30:31" itemprop="dateModified" datetime="2019-03-04T15:30:31-05:00">2019-03-04</time>
+                <time title="Modified: 2019-03-09 12:10:00" itemprop="dateModified" datetime="2019-03-09T12:10:00-05:00">2019-03-09</time>
               
             
           </span>
@@ -872,7 +872,7 @@ Each recursive call takes constant time <code>O(1)</code></p>
 <li>Brazil Country Euqity Risk Premium <span class="math inline">\(= 3.39\%\times\frac{30\%}{20\%} = 5.09\%\)</span></li>
 <li>Brazil Total ERP <span class="math inline">\(=\)</span> Mature Market Premium + CRP <span class="math inline">\(= 5.96\% + 5.09\% = 11.05\%\)</span></li>
 </ul>
-<img src="/2019/03/01/Discount-Rates/ERP-Esitimation-Procedure.png" title="ERP Esitimation Procedure">
+
 <h3 id="from-country-equity-risk-premiums-to-corporate-equity-risk-premiums">From Country Equity Risk Premiums to Corporate Equity Risk Premiums</h3>
 <ol type="1">
 <li>Assume that every company in the country is equally exposed to country risk. In this case,
@@ -1043,8 +1043,8 @@ CRP = Additional Country Risk Premium</p>
 <li>It reflects the firm's business mix over the period of the regression, not the current mix.</li>
 <li>It reflects the firm's average finanical leverage over the period rater than the current leverage.</li>
 </ol>
-<img src="/2019/03/01/Discount-Rates/Measureing-Relative-Risk.png" title="Measureing Relative Risk">
-<img src="/2019/03/01/Discount-Rates/Beta-of-Equity.png" title="Beta of Equity">
+
+
 <h3 id="adjusting-for-financial-leverage">Adjusting for financial leverage</h3>
 <ul>
 <li><strong>Conventional approach</strong>: If we assume that debt carries no market risk (has a beta of zero), the beta of equity alone can be written as a function of the unlevered beta and the debt-equity ratio<br>
@@ -1054,6 +1054,33 @@ In some versions, the tax effect is ignored and there is no (1-t) in the eqution
 <span class="math inline">\(\beta_L = \beta_U(1 + (1-t)\frac{D}{E}) - \beta_{debt}(1-t)\frac{D}{E}\)</span><br>
 While the latter is more realistic, estimating betas for debt can be difficult to do.</li>
 </ul>
+
+<h3 id="why-bottom-up-betas">Why Bottom-up Betas?</h3>
+<p>The standard error in a bottom-up beta will be significantly lower than the standard error in a single regression beta. Roughly speaking, the standard error of a bottom-upbeta estimate can be written as follows: <span class="math display">\[ \text{Std error of bottom-up beta} = \frac{\text{Average Std Error  across Betas}}{\sqrt{\text{Number of Firms in Sample}}}\]</span></p>
+<p>The bottom-up beta can be adjusted to reflect changes in the firm's business mix and financial leverage. Regression betas reflect the past.</p>
+<p>You can estimate bottom-up betas even when you do not have histocial stock prices. This is the case with initial public offerings, private businesses or divisions of companies.</p>
+<h3 id="recap">Recap</h3>
+
+<h2 id="discount-rates-iv-mopping-up">Discount Rates IV: Mopping up</h2>
+<h3 id="estimating-the-cost-of-debt">Estimating the Cost of Debt</h3>
+<p>The cost of debt is the rate at which the company can borrow at currently. It will reflect not only the default risk but also the level of interest rates in the market.</p>
+<p>The two most widely used approaches to estimating cost of debt are:</p>
+<ol type="1">
+<li>Looking up the yield to maturity on a straight bond outstanding from the firm. The limitation of this approach is that very few firms have long term straight bonds that are liquid and widely traded.</li>
+<li>Looking up the rating for the firm and estimating a default spread based upon the rating. While this approach is more robust, different bonds from the same firm can have different ratings. You have to use a median rating for the firm.</li>
+</ol>
+<p>When in trouble (either because you have no ratings or multiple ratings for a firm), estimate a synthetic rating for your firm and the cost of debt based upon that rating.</p>
+<h3 id="estimating-synthetic-ratings">Estimating Synthetic Ratings</h3>
+<p>The rating for a frim can be estimated using the financial characteristics of the firm. In its simplest form, the rating can be esttimated from the interest coverage ratio <span class="math display">\[ \text{Interest Coverage Ratio} = \frac{\text{EBIT}}{\text{Interest Expenses}} \]</span></p>
+<h3 id="cost-of-debt-computations">Cost of Debt Computations</h3>
+<p>Companies in countries with low bond ratings and high default risk might bear the burden of country defult risk, especially if they are smaller or have all of their revenues within the country.</p>
+<p>Larger companies that derive a significant portion of their revenues in global markets may be less exposed to country default risk. In other words, they may be able to borrow at a rate lower than the government.</p>
+<p>The synthetic rating for Embraer is A-. Using the 2004 default spread of 1.00%, we estimate a cost of debt of 9.29% (using a risk free rate of 4.29% and adding in two thirds of the country default spread of 6.01%):</p>
+<p><span class="math display">\[\begin{align*}
+    \text{Cost of debt} &amp;= \text{Risk free rate} + \frac{2}{3}(\text{Brazil country default spread}) + \text{Company default spread}
+    &amp;=4.29\%+4.00\%+1.00\%
+    &amp;=9.29\%
+\end{align*}\]</span></p>
 
           
         
