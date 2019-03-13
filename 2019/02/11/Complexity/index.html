@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Largest Common Subsequence Definition A subsequence of a string x is a set of characters appearing left-to-right in x but not necessarily consecutively. Example    x ABBCABAC     are A A">
+  <meta name="description" content="Intro to Runtime 1234567function Sums(S, A[1..n])    result = 0    for i from 1 to n        for j from i to n            if A[i]+A[j] = S                result = result + 1    return result \(\frac{">
 <meta name="keywords" content="notes,class,basic algorithms,nyu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Largest Common Subsequence">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/Largest-Common-Subsequence/index.html">
+<meta property="og:title" content="Complexity">
+<meta property="og:url" content="http://yoursite.com/2019/02/11/Complexity/index.html">
 <meta property="og:site_name" content="Anpu&#39;s Blog">
-<meta property="og:description" content="Largest Common Subsequence Definition A subsequence of a string x is a set of characters appearing left-to-right in x but not necessarily consecutively. Example    x ABBCABAC     are A A">
+<meta property="og:description" content="Intro to Runtime 1234567function Sums(S, A[1..n])    result = 0    for i from 1 to n        for j from i to n            if A[i]+A[j] = S                result = result + 1    return result \(\frac{">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-08T22:32:16.133Z">
+<meta property="og:updated_time" content="2019-03-12T00:14:34.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Largest Common Subsequence">
-<meta name="twitter:description" content="Largest Common Subsequence Definition A subsequence of a string x is a set of characters appearing left-to-right in x but not necessarily consecutively. Example    x ABBCABAC     are A A">
+<meta name="twitter:title" content="Complexity">
+<meta name="twitter:description" content="Intro to Runtime 1234567function Sums(S, A[1..n])    result = 0    for i from 1 to n        for j from i to n            if A[i]+A[j] = S                result = result + 1    return result \(\frac{">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/25/Largest-Common-Subsequence/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/11/Complexity/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Largest Common Subsequence | Anpu's Blog</title>
+  <title>Complexity | Anpu's Blog</title>
   
 
 
@@ -357,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Largest-Common-Subsequence/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/Complexity/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anpu Li">
@@ -374,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Largest Common Subsequence
+          <h1 class="post-title" itemprop="name headline">Complexity
 
               
             
@@ -400,7 +400,7 @@
                 
               
 
-              <time title="Created: 2019-02-25 20:40:51" itemprop="dateCreated datePublished" datetime="2019-02-25T20:40:51-05:00">2019-02-25</time>
+              <time title="Created: 2019-02-11 20:01:38" itemprop="dateCreated datePublished" datetime="2019-02-11T20:01:38-05:00">2019-02-11</time>
             
 
             
@@ -417,7 +417,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-08 17:32:16" itemprop="dateModified" datetime="2019-03-08T17:32:16-05:00">2019-03-08</time>
+                <time title="Modified: 2019-03-11 20:14:34" itemprop="dateModified" datetime="2019-03-11T20:14:34-04:00">2019-03-11</time>
               
             
           </span>
@@ -453,8 +453,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/02/25/Largest-Common-Subsequence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/25/Largest-Common-Subsequence/" itemprop="commentCount"></span>
+                <a href="/2019/02/11/Complexity/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/11/Complexity/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,158 +489,49 @@
       
 
       
-        <h1 id="largest-common-subsequence">Largest Common Subsequence</h1>
+        <h1 id="intro-to-runtime">Intro to Runtime</h1>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Sums(S, A[<span class="number">1.</span>.n])</span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">1</span> to n</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> i to n</span><br><span class="line">            <span class="keyword">if</span> A[i]+A[j] = S</span><br><span class="line">                result = result + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p><span class="math inline">\(\frac{n(n+1)}{2}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">talk about</th>
+<th style="text-align: center;">runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">can</td>
+<td style="text-align: center;">can not</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">predict how it scales</td>
+<td style="text-align: center;">predict actual runtime</td>
+</tr>
+</tbody>
+</table>
+<h1 id="big-o-and-theta-notation">Big-O and <span class="math inline">\(\theta\)</span> Notation</h1>
+<h2 id="properties">Properties</h2>
+<ol type="1">
+<li>ignore slow-growing things</li>
+<li>reason about relaative growth, e.g., <span class="math inline">\(n^2\)</span> <span class="math inline">\(2n^2\)</span> and <span class="math inline">\(\frac{n^2}{2}\)</span> should be the same</li>
+</ol>
 <h2 id="definition">Definition</h2>
-<p>A subsequence of a string <code>x</code> is a set of characters appearing left-to-right in <code>x</code> but not necessarily consecutively.</p>
-<h2 id="example">Example</h2>
-<table>
-<thead>
-<tr class="header">
-<th><code>x</code></th>
-<th><code>ABBCABAC</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>are</td>
-<td><code>A</code> <code>ABB</code> <code>CAC</code></td>
-</tr>
-<tr class="even">
-<td>are not</td>
-<td><code>BBBB</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="naive-algorithm">Naive algorithm</h2>
-<ol type="1">
-<li>Generate all possible subsequences of <code>x</code></li>
-<li>Check each one against <code>y</code></li>
-</ol>
-<h3 id="simplification">Simplification</h3>
-<ol type="1">
-<li>Find <code>len(LCS(x,y))</code></li>
-<li>Extend to find <code>LCS</code></li>
-</ol>
-<h3 id="notation">Notation</h3>
-<p><span class="math inline">\(C[i, j] = len(LCS(x[1..i], y[1..j]))\)</span><br>
-<span class="math inline">\(m = len(x), n = len(y)\)</span><br>
-<span class="math inline">\(C[m, n] = len(LCS(x, y))\)</span></p>
-<h2 id="recurrence-relation">Recurrence relation</h2>
-<p><span class="math inline">\(\begin{align*}  C[i, j] &amp;= C[i-1, j-1] + 1, \text{if } x[i] = y[j] \\  &amp;=max(C[i-1, j], C[i, j-1]), \text{otherwise} \\ \end{align*}\)</span></p>
-<h2 id="dynamic-programming">Dynamic Programming</h2>
-<p>Hallmark 1: optimal substructure<br>
-Hallmark 2: overlapping substructure</p>
-<p>How many subproblems in total? <code>mn</code></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[<span class="number">0.</span>.m, <span class="number">0.</span>.n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    <span class="keyword">if</span> C[i, j] <span class="keyword">is</span> NULL:</span><br><span class="line">        <span class="keyword">if</span> i ==<span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">            C[i, j] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>: </span><br><span class="line">            <span class="keyword">if</span> x[i] == y[j]:</span><br><span class="line">                C[i, j] = LCS(x, y, i<span class="number">-1</span>, j<span class="number">-1</span>, C) + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                C[i, j] = max(LCS(x, y, i<span class="number">-1</span>, j, C), LCS(x, y, i, j<span class="number">-1</span>, C))</span><br><span class="line">    <span class="keyword">return</span> C[i, j]</span><br></pre></td></tr></table></figure>
-<p>Complexity = constant per subproblem <span class="math inline">\(\times\)</span> #subproblems= O(mn)</p>
-<p>This can also be done iteratively. <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Initialize array C[<span class="number">0.</span>.m, <span class="number">0.</span>.n] to NULL</span><br><span class="line">LCS(x, y, i, j, C):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">0</span> to m:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> <span class="number">0</span> to n:</span><br><span class="line">            <span class="keyword">if</span> i ==<span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">                C[i, j] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                <span class="keyword">if</span> x[i] == y[j]:</span><br><span class="line">                    C[i, j] = LCS(x, y, i<span class="number">-1</span>, j<span class="number">-1</span>, C) + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    C[i, j] = max(LCS(x, y, i<span class="number">-1</span>, j, C), LCS(x, y, i, j<span class="number">-1</span>, C))</span><br><span class="line">    <span class="keyword">return</span> C[i, j]</span><br></pre></td></tr></table></figure></p>
-<p>Then we can construct a table and trace it back to get the LCS.</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">B</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">D</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">backtrack(C, x, y, i, j):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">or</span> j == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">    <span class="keyword">if</span> x[i] == y[j]:</span><br><span class="line">        <span class="keyword">return</span> backtrack(C, x, y, i<span class="number">-1</span>, j<span class="number">-1</span>) + x[i]</span><br><span class="line">    <span class="keyword">if</span> C[i<span class="number">-1</span>, j] &gt; C[i, j<span class="number">-1</span>]:</span><br><span class="line">        <span class="keyword">return</span> backtrack(C, x, y, i<span class="number">-1</span>, j)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> backtrack(C, x, y, i, j<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<p>We shall say that <span class="math inline">\(f(n) = O(g(n))\)</span> if there exist <span class="math inline">\(C, N &gt; 0\)</span> such that <span class="math inline">\(f(n)\leq C\cdot g(n)\)</span> for all <span class="math inline">\(n &gt; N\)</span></p>
+<p>For an algorithm with runtime <span class="math inline">\(O(n^2)\)</span>, is it true that <span class="math inline">\(n\rightarrow 2n \Longrightarrow runtime \rightarrow 4runtime\)</span>?</p>
+<p>No, it just says the algorithm is <strong>NOT WORSE THAN</strong> <span class="math inline">\(O(n^2)\)</span>.</p>
+<p>Talked about the <span class="math inline">\(big-\theta\)</span> notation. Some logarithms, e.g., <span class="math inline">\(log_2{n}=\theta (log_2{n^2})\)</span></p>
+<h1 id="complexities">Complexities</h1>
+<ul>
+<li>worst case</li>
+<li>best case</li>
+<li>average</li>
+<li>space complexity</li>
+<li>IO complexity</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Search(x, A[<span class="number">1</span>,..n])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">1</span> to n</span><br><span class="line">        <span class="keyword">if</span> A[i] = x then <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<p>Worst Case <span class="math inline">\(f(n)=\theta({n})\)</span><br>
+Best Case <span class="math inline">\(\theta(1)\)</span></p>
 
       
     </div>
@@ -683,8 +574,8 @@ Hallmark 2: overlapping substructure</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/20/Dynamic-Programming/" rel="next" title="Dynamic Programming">
-                <i class="fa fa-chevron-left"></i> Dynamic Programming
+              <a href="/2019/01/27/Recursion/" rel="next" title="Recursion">
+                <i class="fa fa-chevron-left"></i> Recursion
               </a>
             
           </div>
@@ -693,8 +584,8 @@ Hallmark 2: overlapping substructure</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/27/Word-Wrap-Problem/" rel="prev" title="Word Wrap Problem">
-                Word Wrap Problem <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/19/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -872,7 +763,7 @@ Hallmark 2: overlapping substructure</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#largest-common-subsequence"><span class="nav-number">1.</span> <span class="nav-text">Largest Common Subsequence</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition"><span class="nav-number">1.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">1.2.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#naive-algorithm"><span class="nav-number">1.3.</span> <span class="nav-text">Naive algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#simplification"><span class="nav-number">1.3.1.</span> <span class="nav-text">Simplification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notation"><span class="nav-number">1.3.2.</span> <span class="nav-text">Notation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#recurrence-relation"><span class="nav-number">1.4.</span> <span class="nav-text">Recurrence relation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-programming"><span class="nav-number">1.5.</span> <span class="nav-text">Dynamic Programming</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#intro-to-runtime"><span class="nav-number">1.</span> <span class="nav-text">Intro to Runtime</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#big-o-and-theta-notation"><span class="nav-number">2.</span> <span class="nav-text">Big-O and \(\theta\) Notation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#properties"><span class="nav-number">2.1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#definition"><span class="nav-number">2.2.</span> <span class="nav-text">Definition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#complexities"><span class="nav-number">3.</span> <span class="nav-text">Complexities</span></a></li></ol></div>
             
 
           </div>
@@ -1058,9 +949,9 @@ Hallmark 2: overlapping substructure</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/25/Largest-Common-Subsequence/";
-    this.page.identifier = "2019/02/25/Largest-Common-Subsequence/";
-    this.page.title = 'Largest Common Subsequence';
+    this.page.url = "http://yoursite.com/2019/02/11/Complexity/";
+    this.page.identifier = "2019/02/11/Complexity/";
+    this.page.title = 'Complexity';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

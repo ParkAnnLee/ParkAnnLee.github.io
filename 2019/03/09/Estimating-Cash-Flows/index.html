@@ -107,7 +107,12 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/Measuring-Cash-Flows.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/Measuring-Cash-Flows-Three-Pathways.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/From-Reported-to-Acutal-Earnings.png">
-<meta property="og:updated_time" content="2019-03-09T21:32:30.195Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/Magnitude-OL.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/OL-Effects.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/Magnitude-RD.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/RD-Effects.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/09/Estimating-Cash-Flows/Dealing-with-Negative-or-Abnormally-Low-Earnings.png">
+<meta property="og:updated_time" content="2019-03-09T22:31:39.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Estimating Cash Flows">
 <meta name="twitter:description" content="Steps in Cash Flow Estimation Estimate the current earnings of the firm  If looking at cash flows to equity, look at earnings after interest expenses, i.e., net income. If looking at cash flows to">
@@ -404,7 +409,7 @@
                 
               
 
-              <time title="Created: 2019-03-09 15:32:58 / Modified: 16:32:30" itemprop="dateCreated datePublished" datetime="2019-03-09T15:32:58-05:00">2019-03-09</time>
+              <time title="Created: 2019-03-09 15:32:58 / Modified: 17:31:39" itemprop="dateCreated datePublished" datetime="2019-03-09T15:32:58-05:00">2019-03-09</time>
             
 
             
@@ -498,7 +503,7 @@
 <img src="/2019/03/09/Estimating-Cash-Flows/Measuring-Cash-Flows-Three-Pathways.png" title="Measuring Cash Flows">
 <p><strong>Q:</strong> Where are the tax savings from interest expenses?<br>
 <strong>A:</strong> The tax savings are counted in the cost of capital (after-tax cost of debt).</p>
-<h1 id="cash-flows-1-accounting-earnings-flawed-but-important">Cash Flows 1: Accounting Earnings, Flawed but Important</h1>
+<h1 id="cash-flows-i-accounting-earnings-flawed-but-important">Cash Flows I: Accounting Earnings, Flawed but Important</h1>
 <h2 id="from-reported-to-actual-earnings">From Reported to Actual Earnings</h2>
 <img src="/2019/03/09/Estimating-Cash-Flows/From-Reported-to-Acutal-Earnings.png" title="From Reported to Acutal Earnings">
 <h2 id="update-earnings">Update Earnings</h2>
@@ -510,6 +515,201 @@
 <p>Updating makes the most difference for smaller and more volatile firms, as well as for firms that have undergone significant restructuring.</p>
 <p><strong>Time saver</strong>: To get a trailing 12-month number, all you need is one 10K and one 10Q (example third quarter). Use the Year to date numbers from the 10Q. For example, to get trailing revenues from a third quarter 10Q:</p>
 <p><span class="math inline">\(\text{Trailing 12-month Revenue} = \text{Revenues (in last 10K)} - \text{Revenues from first 3 quarters of last year} + \\ \text{Revenues from first 3 quarters of this year}\)</span></p>
+<h2 id="correct-accounting-earnings">Correct Accounting Earnings</h2>
+<p>Make sure that there are no <strong>financial expenses</strong> mixed in with operating expenses</p>
+<ul>
+<li>Financial expense: Any commitment that is <strong>tax deductible</strong> that you have to meet no matter what your operating results: Failure to meet it leads to loss of control of the business.</li>
+<li>Example: Operating Leases: While accounting convention treats operating leases as operating expenses, they are really financial expenses and need to be reclassified as such. This has no effect on equity earnings but does change the operating earnings</li>
+</ul>
+<p>Make sure that there are no <strong>capital expenses</strong> mixed in with the operating expenses</p>
+<ul>
+<li>Capital expense: Any expense that is expected to generate <strong>benefits over multiple periods</strong>.</li>
+<li>R&amp;D Adjustment: Since R&amp;D is a capital expenditure (rather than an operating expense), the operating income has to be adjusted to reflect its treatment.</li>
+</ul>
+<h2 id="dealing-with-operating-lease-expenses">Dealing with Operating Lease Expenses</h2>
+<img src="/2019/03/09/Estimating-Cash-Flows/Magnitude-OL.png" title="Magnitude OL">
+<p>Operating Lease Expenses are treated as operating expenses in computing operating income. In reality, operating lease expenses should be treated as financing expenses, with the following adjustments to earnings and capital:</p>
+<p>Debt Value of Operating Leases = Present value of Operating Lease Commitments at the pre-tax cost of debt</p>
+<p>When you convert operating leases into debt, you also create an asset to counter it of exactly the same value.</p>
+<p>Adjusted Operating Earnings</p>
+<ul>
+<li><span class="math inline">\(\text{Adjusted Operating Earnings} = \text{Operating Earnings} + \text{Operating Lease Expenses} - \\ \text{Depreciation on Leased Asset}\)</span></li>
+</ul>
+<p>As an approximation, this works:</p>
+<ul>
+<li><span class="math inline">\(\text{Adjusted Operating Earnings} = \text{Operating Earnings} + \\ \text{Pre-tax cost of Debt} \times \text{PV of Operating Leases}\)</span></li>
+</ul>
+<h3 id="operating-leases-at-the-gap-in-2003">Operating Leases at The Gap in 2003</h3>
+<p>The Gap has conventional debt of about <code>$1.97</code> billion on its balance sheet and its pre-tax cost of debt is about 6%. Its operating lease payments in the 2003 were <code>$978</code>million and its commitments for the future are below:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Commitment (millions)</th>
+<th>Present Value (at 6%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>$899.00</td>
+<td>$848.11</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>$846.00</td>
+<td>$752.94</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>$738.00</td>
+<td>$619.64</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>$598.00</td>
+<td>$473.67</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>$477.00</td>
+<td>$356.44</td>
+</tr>
+<tr class="even">
+<td>6&amp;7</td>
+<td>$982.50 each year</td>
+<td>$1,346.04</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Debt Value of leases = <code>$4,396.85</code> (Also value of leased asset)</li>
+<li>Debt outstanding at The Gap = <code>$1,970</code> + <code>$4,397</code> = <code>$6,367</code></li>
+<li>Adjusted Operating Income = Stated OI + OL exp this year - Deprecion = <code>$1,012</code> + <code>$978</code> - <code>$4397</code> /7 = <code>$1,362</code> million (7 year life for assets)</li>
+<li>Approximate OI = <code>$1,012</code> + <code>$4397</code>(.06) = <code>$1,276</code></li>
+</ul>
+<h3 id="the-collateral-effects-of-treating-operating-leases-as-debt">The Collateral Effects of Treating Operating Leases as Debt</h3>
+<img src="/2019/03/09/Estimating-Cash-Flows/OL-Effects.png" title="OL Effects">
+<h2 id="rd-expenses-operating-or-capital-expenses">R&amp;D Expenses: Operating or Capital Expenses</h2>
+<img src="/2019/03/09/Estimating-Cash-Flows/Magnitude-RD.png" title="Magnitude RD">
+<p>Accounting standards require us to consider R&amp;D as an operating expense even though it is designed to generate future growth. It is more logical to treat it as capital expenditures.</p>
+<p>To capitalize R&amp;D,</p>
+<ul>
+<li>Specify an amortizable life for R&amp;D (2 - 10 years)</li>
+<li>Collect past R&amp;D expenses for as long as the amortizable life</li>
+<li>Sum up the unamortized R&amp;D over the period. (Thus, if the amortizable life is 5 years, the research asset can be obtained by adding up 1/5th of the R&amp;D expense from five years ago, 2/5th of the R&amp;D expense from four years ago...</li>
+</ul>
+<h3 id="capitalizing-rd-expenses-sap">Capitalizing R&amp;D Expenses: SAP</h3>
+<p>R &amp; D was assumed to have a 5-year life.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>R&amp;D Expense</th>
+<th>Unamortized %</th>
+<th>Unamortized Amount</th>
+<th>Amortization this year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Current</td>
+<td>1020.02</td>
+<td>1</td>
+<td>1020.02</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>-1</td>
+<td>993.99</td>
+<td>0.8</td>
+<td>795.19</td>
+<td>€ 198.80</td>
+</tr>
+<tr class="odd">
+<td>-2</td>
+<td>909.39</td>
+<td>0.6</td>
+<td>545.63</td>
+<td>€ 181.88</td>
+</tr>
+<tr class="even">
+<td>-3</td>
+<td>898.25</td>
+<td>0.4</td>
+<td>359.3</td>
+<td>€ 179.65</td>
+</tr>
+<tr class="odd">
+<td>-4</td>
+<td>969.38</td>
+<td>0.2</td>
+<td>193.88</td>
+<td>€ 193.88</td>
+</tr>
+<tr class="even">
+<td>-5</td>
+<td>744.67</td>
+<td>0</td>
+<td>0</td>
+<td>€ 148.93</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Value of research asset = € 2,914 million</li>
+<li>Amortization of research asset in 2004 = € 903 million</li>
+<li>Increase in Operating Income = 1020 - 903 = € 117 million</li>
+</ul>
+<img src="/2019/03/09/Estimating-Cash-Flows/RD-Effects.png" title="ED Effects">
+<h2 id="accounting-malfeasance">Accounting Malfeasance</h2>
+<p>Though all firms may be governed by the same accounting standards, the fidelity that they show to these standards can vary. More aggressive firms will show higher earnings than more conservative firms.</p>
+<p>While you will not be able to catch outright fraud, you should look for warning signals in financial statements and correct for them:</p>
+<ul>
+<li>Income from unspecified sources - holdings in other businesses that are not revealed or from special purpose entities.</li>
+<li>Income from asset sales or financial transactions (for a non-financial firm)</li>
+<li>Sudden changes in standard expense items - a big drop in S,G &amp;A or R&amp;D expenses as a percent of revenues, for instance.</li>
+<li>Frequent accounting restatements</li>
+<li>Accrual earnings that run ahead of cash earnings consistently</li>
+<li>Big differences between tax income and reported income</li>
+</ul>
+<h2 id="dealing-with-negative-or-abnormally-low-earnings">Dealing with Negative or Abnormally Low Earnings</h2>
+<img src="/2019/03/09/Estimating-Cash-Flows/Dealing-with-Negative-or-Abnormally-Low-Earnings.png" title="Dealing with Negative or Abnormally Low Earnings">
+<p>To decide what to do when your firm is losing money, you first have to diagnose the problem. If the problem is transitory (a recession, a loss caused by a strike), you can normalize earnings instantaneously and use the normalized earnings in valuation.</p>
+<ul>
+<li>If it is <strong>long term</strong>, you have to first figure out what the long term problem is.</li>
+<li>If it is <strong>financial</strong> - the firm has too much debt - you have to consider whether the firm can pay down its debt and survive. If you believe it can, lower the debt ratio each year and compute a cost of capital.</li>
+<li>If it is <strong>operating</strong> or <strong>strategic</strong> - you have to work out what it will cost the firm to fix these problems- and build the expected improvement in margins over time.</li>
+<li>If it is <strong>life cycle</strong> related - the firm is in early stage of its life cycle and it is normal to lose money at that stage - you have to build in the expectations of the improvements that will occur as the firm moves up the life cycle (with a healthy dose of skepticism about whether the firm will make it).</li>
+</ul>
+<h1 id="cash-flows-ii-taxes-and-reinvestment">Cash Flows II: Taxes and Reinvestment</h1>
+<h2 id="what-tax-rate">What tax rate?</h2>
+<p>The tax rate that you should use in computing the after-tax operating income should be</p>
+<ol type="1">
+<li>The effective tax rate in the financial statements (taxes paid/Taxable income)</li>
+<li>The tax rate based upon taxes paid and EBIT (taxes paid/EBIT)</li>
+<li>The marginal tax rate for the country in which the company operates</li>
+<li>The weighted average marginal tax rate across the countries in which the company operates</li>
+<li>None of the above</li>
+<li>Any of the above, as long as you compute your after-tax cost of debt using the same tax rate</li>
+</ol>
+<p>The effective tax rate is defined as taxes paid/ taxable income, as defined in the reporting books. The marginal tax rate is the tax rate on the last dollar of income. The effective tax rate is lower than the marginal tax rate for most firms. Why?</p>
+<ul>
+<li>Bracket creep: Can be a reason for small private businesses but not for large publicly traded firms where most of the income is at the highest marginal tax rate anyway.</li>
+<li>Cosmetic factors: Two sets of books with different accounting standards for tax and reporting books.</li>
+<li>Real factors: Capacity to defer taxes to the future.</li>
+</ul>
+<h2 id="the-right-tax-rate-to-use">The Right Tax Rate to Use</h2>
+<p>The choice really is between the effective and the marginal tax rate. In doing projections, it is far safer to use the marginal tax rate since the effective tax rate is really a reflection of the difference between the accounting and the tax books.</p>
+<p>By using the marginal tax rate, we tend to understate the after-tax operating income in the earlier years, but the after-tax tax operating income is more accurate in later years.</p>
+<p>If you choose to use the effective tax rate, adjust the tax rate towards the marginal tax rate over time.</p>
+<ul>
+<li>While an argument can be made for using a weighted average marginal tax rate, it is safest to use the marginal tax rate of the country</li>
+</ul>
+<p>If you have a choice, you would prefer to do valuation with the tax books in front of you, but since you do not have that choice as an outsider you have to choose between the effective tax rate and the marginal tax rate.</p>
+<p>If you use the effective tax rate all the way through, you are assuming that taxes can be deferred forever. This is unrealistic - tax deferrals catch up with you as your growth flags - and will result in an overvaluation of your firm.</p>
+<p>If you use a marginal tax rate, you are assuming that you cannot defer taxes from this point on. This is far too conservative and will yield too low a value for your firm.</p>
+<p><strong>Suggestion</strong>: Start with the effective tax rate in the early years and move towards the marginal tax rate in the terminal year.</p>
 
       
     </div>
@@ -557,6 +757,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/11/Growth/" rel="prev" title="Growth">
+                Growth <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -635,7 +839,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -733,7 +937,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#steps-in-cash-flow-estimation"><span class="nav-number">1.</span> <span class="nav-text">Steps in Cash Flow Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#estimate-the-current-earnings-of-the-firm"><span class="nav-number">1.1.</span> <span class="nav-text">Estimate the current earnings of the firm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#consider-how-much-the-firm-invested-to-create-future-growth"><span class="nav-number">1.2.</span> <span class="nav-text">Consider how much the firm invested to create future growth</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measuring-fcff-three-ways-to-the-same-end-game"><span class="nav-number">2.</span> <span class="nav-text">Measuring FCFF: Three ways to the same end game</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#cash-flows-1-accounting-earnings-flawed-but-important"><span class="nav-number"></span> <span class="nav-text">Cash Flows 1: Accounting Earnings, Flawed but Important</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#from-reported-to-actual-earnings"><span class="nav-number">1.</span> <span class="nav-text">From Reported to Actual Earnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-earnings"><span class="nav-number">2.</span> <span class="nav-text">Update Earnings</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#steps-in-cash-flow-estimation"><span class="nav-number">1.</span> <span class="nav-text">Steps in Cash Flow Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#estimate-the-current-earnings-of-the-firm"><span class="nav-number">1.1.</span> <span class="nav-text">Estimate the current earnings of the firm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#consider-how-much-the-firm-invested-to-create-future-growth"><span class="nav-number">1.2.</span> <span class="nav-text">Consider how much the firm invested to create future growth</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measuring-fcff-three-ways-to-the-same-end-game"><span class="nav-number">2.</span> <span class="nav-text">Measuring FCFF: Three ways to the same end game</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#cash-flows-i-accounting-earnings-flawed-but-important"><span class="nav-number"></span> <span class="nav-text">Cash Flows I: Accounting Earnings, Flawed but Important</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#from-reported-to-actual-earnings"><span class="nav-number">1.</span> <span class="nav-text">From Reported to Actual Earnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-earnings"><span class="nav-number">2.</span> <span class="nav-text">Update Earnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#correct-accounting-earnings"><span class="nav-number">3.</span> <span class="nav-text">Correct Accounting Earnings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dealing-with-operating-lease-expenses"><span class="nav-number">4.</span> <span class="nav-text">Dealing with Operating Lease Expenses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#operating-leases-at-the-gap-in-2003"><span class="nav-number">4.1.</span> <span class="nav-text">Operating Leases at The Gap in 2003</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-collateral-effects-of-treating-operating-leases-as-debt"><span class="nav-number">4.2.</span> <span class="nav-text">The Collateral Effects of Treating Operating Leases as Debt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rd-expenses-operating-or-capital-expenses"><span class="nav-number">5.</span> <span class="nav-text">R&amp;D Expenses: Operating or Capital Expenses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#capitalizing-rd-expenses-sap"><span class="nav-number">5.1.</span> <span class="nav-text">Capitalizing R&amp;D Expenses: SAP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#accounting-malfeasance"><span class="nav-number">6.</span> <span class="nav-text">Accounting Malfeasance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dealing-with-negative-or-abnormally-low-earnings"><span class="nav-number">7.</span> <span class="nav-text">Dealing with Negative or Abnormally Low Earnings</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cash-flows-ii-taxes-and-reinvestment"><span class="nav-number"></span> <span class="nav-text">Cash Flows II: Taxes and Reinvestment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#what-tax-rate"><span class="nav-number">1.</span> <span class="nav-text">What tax rate?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-right-tax-rate-to-use"><span class="nav-number">2.</span> <span class="nav-text">The Right Tax Rate to Use</span></a></li></ol></li></div>
             
 
           </div>
