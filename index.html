@@ -356,6 +356,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/Sorting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anpu Li">
+      <meta itemprop="description" content="Thoughts, Works, and Collection">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anpu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/25/Sorting/" class="post-title-link" itemprop="url">Sorting</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-25 11:56:57 / Modified: 12:13:44" itemprop="dateCreated datePublished" datetime="2019-03-25T11:56:57-04:00">2019-03-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/03/25/Sorting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/25/Sorting/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="divide-conquer">Divide &amp; Conquer</h1>
+<h2 id="example-binary-search">Example: Binary Search</h2>
+<p>Given sorted <code>A[1..n]</code> and number <code>x</code>. Find out whether <code>A</code> contains <code>x</code>.</p>
+<p>Complexity: <span class="math inline">\(O(\log{n})\)</span></p>
+<h1 id="sorting">Sorting</h1>
+<h3 id="input">Input</h3>
+<p>Array <code>A[1..n]</code> of numbers</p>
+<h3 id="output">Output</h3>
+<p>Sorted <code>A[1..n]</code> in <strong>ascending</strong> order</p>
+<h2 id="merge-sort">Merge Sort</h2>
+<h3 id="merge">Merge</h3>
+<p>Suppose we have two sorted arrays:<br>
+B: 1, 5, 12<br>
+C: 2, 3, 7</p>
+<p>and we want to combine the two arrays to get 1, 2, 3, 5, 7, 12</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(L, R)</span>:</span></span><br><span class="line">    i = j = <span class="number">0</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">while</span> i &lt; len(L) <span class="keyword">and</span> j &lt; len(R):</span><br><span class="line">        <span class="keyword">if</span> L[i] &lt;= R[j]:</span><br><span class="line">            result.append(L[i])</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result.append(R[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(L):</span><br><span class="line">        result.append(L[i])</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; len(R):</span><br><span class="line">        result.append(R[j])</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p>The complexity is <span class="math inline">\(O(m+n), m = len(L), n = len(R)\)</span></p>
+<h3 id="sort">Sort</h3>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(A) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> A</span><br><span class="line">    m = len(A) // <span class="number">2</span></span><br><span class="line">    L = merge_sort(A[:m])</span><br><span class="line">    R = merge_sort(A[m:])</span><br><span class="line">    <span class="keyword">return</span> merge(L, R)</span><br></pre></td></tr></table></figure>
+<h3 id="complexity-analysis">Complexity Analysis</h3>
+<p><span class="math inline">\(T(n) = 2\times T(\frac{n}{2}) + \Theta(n)\)</span><br>
+<span class="math inline">\(T(n) = \log_2{n}\times\Theta(n) = O(n\log{n})\)</span></p>
+<p>What if<br>
+<span class="math inline">\(T(n) = 2\times T(\frac{n}{2}) + n^2\)</span><br>
+<span class="math inline">\(T(n) = n^2\times\frac{1-\frac{1}{2}^{\log_2{n}}}{1-\frac{1}{2}} = O(n^2)\)</span></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/Database-Systems-Unit-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -401,12 +599,24 @@
                 
               
 
-              <time title="Created: 2019-03-19 14:55:25 / Modified: 15:01:16" itemprop="dateCreated datePublished" datetime="2019-03-19T14:55:25-04:00">2019-03-19</time>
+              <time title="Created: 2019-03-19 14:55:25" itemprop="dateCreated datePublished" datetime="2019-03-19T14:55:25-04:00">2019-03-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-25 11:57:58" itemprop="dateModified" datetime="2019-03-25T11:57:58-04:00">2019-03-25</time>
               
             
           </span>
@@ -491,6 +701,67 @@ We may use the term table for a relation in this unit too.</p>
 Note: in many places you will read: “an element can appear in a set at most once”</p>
 <ul>
 <li>This is not quite right. And it is important not to assume this, as we will see in a later unit</li>
+</ul>
+<h1 id="relations">Relations</h1>
+<p>Consider a table, with a fixed number of columns where the elements of each column are drawn from some specific domain. The columns are labeled and the labels are distinct.</p>
+<p>We will consider such a table to be <strong>a set of rows</strong> (another word for “row” in our context: <strong>tuple</strong>).</p>
+<p>An example of a table S of two columns A and B</p>
+<img src="/2019/03/19/Database-Systems-Unit-3/Relation_1.png">
+<p>A <strong>relation</strong> is such a table<br>
+We will also write S(A,B) for table S with columns A and B.</p>
+<h2 id="relation-schema">Relation Schema</h2>
+<p>What we saw was an <strong>instance</strong> (current value for a relation with the defined columns and domains).</p>
+<p>To specify this relation in general (not the specific instance) we need to talk about a <strong>relational schema</strong>.<br>
+A relational schema defines a set of relations.</p>
+<p>In databases everything is finite, so a relational schema defines a finite set of finite relations.</p>
+<p>Here is an informal, but complete, description what a relational schema of one relation is<br>
+We want to define a structure for some table</p>
+<ol type="1">
+<li>We give it a name (we had S)</li>
+<li>We chose the number of columns (we had 2) and give them distinct names (we had A and B)</li>
+<li>We decide on the domains of elements in the columns (we had letters for A and integers for B)</li>
+<li>We decide on constraints, if any, on the permitted values (for example, we can assume as it was true for our example that any two rows that are equal on A must be equal on B)</li>
+</ol>
+<h1 id="keys">Keys</h1>
+<p>We will specify generally, as suitable for the schema:</p>
+<ul>
+<li><strong>Primary keys</strong></li>
+<li><strong>Keys</strong> (beyond primary)</li>
+<li><strong>Foreign keys</strong> and what they reference (we will see soon what this means)</li>
+</ul>
+<p>The above are most important <strong>structurally</strong>. Later, especially when we talk about SQL DDL, we will specify additional properties and constraints. For example, the height of a person has to be positive, if it is known. Some of the constraints may involve more than one relation.</p>
+<p>A set of columns in a relation is a <strong>superkey</strong> if and only any two tuples that are equal on the elements of these columns are (completely equal).<br>
+<strong>A relation always has at least one superkey</strong><br>
+The set of all the attributes is a superkey.<br>
+A minimal superkey, is a <strong>key</strong>.<br>
+A relation always has at least one key (start with any superkey and remove unnecessary columns)<br>
+There may be more than one key <strong>Exactly one</strong> key is chosen as <strong>primary key</strong> (there is no formal way to decide which one)<br>
+Other keys are just keys and sometimes they are called <strong>candidate keys</strong> (as they are candidates for the primary key, though not chosen)</p>
+<h2 id="superkey">Superkey</h2>
+<p>A set of columns whose values determine the values of all the columns in a row for every instance of the relation</p>
+<ul>
+<li>All the columns form a superkey (trivially)</li>
+<li>Superkeys are only used in formal definitions</li>
+</ul>
+<h2 id="key">Key</h2>
+<p>A set of columns whose values determine the values of all the columns in a row for every instance of the relation, <strong>but any proper subset of that set of columns does not do that</strong></p>
+<h2 id="primary-key">Primary Key</h2>
+<p>A chosen key. Important: <strong>no attribute of a primary key can be NULL</strong> (the value of every attribute must be always known); why will be discussed later</p>
+<h1 id="relational-databases">Relational Databases</h1>
+<p>A relational database is “basically” a set of tables with values drawn from specified domains, specified using a relational schema.</p>
+<p>This is formally correct, but it is misleading in reality As we will see soon, a better way to define a relational database is to say that it is</p>
+<ul>
+<li>A set of relations</li>
+<li>A set of binary, many-to-one mappings between them (partial functions), mimicking child-to-parent relationships Looking from the “other side,” they are one-to-many, mimicking parent-to-child relationships</li>
+<li>Some other, less fundamental, components ignored for now</li>
+</ul>
+<h1 id="from-er-diagram-to-relational-database-key-concepts-with-examples">From ER Diagram to Relational DatabaseKey Concepts With Examples</h1>
+<p>We are now ready to convert ER diagrams into relational databases<br>
+Generally, but not always</p>
+<ul>
+<li>An entity set is converted into a table</li>
+<li>A relationship is converted into a table</li>
+<li>This is logical design, though some call it physical design</li>
 </ul>
 
           
@@ -610,7 +881,7 @@ Note: in many places you will read: “an element can appear in a set at most on
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-19 14:55:52" itemprop="dateModified" datetime="2019-03-19T14:55:52-04:00">2019-03-19</time>
+                <time title="Modified: 2019-03-25 11:57:35" itemprop="dateModified" datetime="2019-03-25T11:57:35-04:00">2019-03-25</time>
               
             
           </span>
@@ -667,6 +938,7 @@ Note: in many places you will read: “an element can appear in a set at most on
 <li><a href="/2019/02/27/Word-Wrap-Problem/" title="Word Wrap Problem">Word Wrap Problem</a></li>
 <li><a href="/2019/02/25/Largest-Common-Subsequence/" title="Largest Common Subsequence">Largest Common Subsequence</a></li>
 <li><a href="/2019/03/06/Knapsack-Problem/" title="Knapsack Problem">Knapsack Problem</a></li>
+<li><a href="/2019/03/25/Sorting/" title="Sorting">Sorting</a></li>
 </ol>
 <h2 id="database-systems">Database Systems</h2>
 <ol type="1">
@@ -3420,279 +3692,6 @@ Hallmark 2: overlapping substructure</p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Dynamic-Programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anpu Li">
-      <meta itemprop="description" content="Thoughts, Works, and Collection">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anpu's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/20/Dynamic-Programming/" class="post-title-link" itemprop="url">Dynamic Programming</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-20 20:05:01" itemprop="dateCreated datePublished" datetime="2019-02-20T20:05:01-05:00">2019-02-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-11 20:15:24" itemprop="dateModified" datetime="2019-03-11T20:15:24-04:00">2019-03-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/02/20/Dynamic-Programming/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/20/Dynamic-Programming/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="dynamic-programming-dp">Dynamic Programming (DP)</h1>
-<h2 id="idea">Idea</h2>
-<p>Speed up recursion by remembering</p>
-<h2 id="fibonacci">Fibonacci</h2>
-<h3 id="naive-recursion">Naive Recursion</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Fib1(n):</span><br><span class="line">    <span class="keyword">if</span> n = <span class="number">0</span> <span class="keyword">or</span> n = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> Fib1(n<span class="number">-1</span>) + Fib1(n<span class="number">-2</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="bottom-up-dp">Bottom-up DP</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Fib2(n):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">2</span> to n:</span><br><span class="line">        R[i] = R[i<span class="number">-1</span>] + R[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> R[n]</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Complexity $O(n)$. But bigger than it when n large</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">bottom up DP</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
-<h3 id="top-down-dp">Top-down DP</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Fib3(n):</span><br><span class="line">    R[<span class="number">0.</span>.n] = array of <span class="number">-1</span></span><br><span class="line">    <span class="keyword">return</span> FibIn(n, R)</span><br></pre></td></tr></table></figure>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function FibIn(k;;R[<span class="number">0.</span>.n]):</span><br><span class="line">    <span class="keyword">if</span> R[k] != <span class="number">-1</span>:</span><br><span class="line">        <span class="keyword">return</span> R[k]</span><br><span class="line">    <span class="keyword">if</span> k = <span class="number">0</span> <span class="keyword">or</span> k = <span class="number">1</span>:</span><br><span class="line">        R[k] = k</span><br><span class="line">    R[k] = FibIn(k<span class="number">-1</span>,R) + FibIn(k<span class="number">-2</span>, R)</span><br><span class="line">    <span class="keyword">return</span> R[k]</span><br></pre></td></tr></table></figure>
-<p>FibIn(k, R) can be called by FibIn(k+1, R) and FibIn(k+2, R) and each of them will do this at most once.<br>
-complexity <span class="math inline">\(= O(1)\times2(n+1) = O(n)\)</span></p>
-<h2 id="subset-sum">Subset Sum</h2>
-<h3 id="input">Input</h3>
-<ul>
-<li>array <code>A[1..n]</code> of positive integers,</li>
-<li>positive integer <code>s</code></li>
-</ul>
-<h3 id="output">Output</h3>
-<ul>
-<li><code>True</code> if <code>s</code> can be written as the sum of a subset of <code>A</code></li>
-<li><code>False</code> otherwise</li>
-</ul>
-<h3 id="notation">Notation</h3>
-<p><code>SS[i, j]</code> =</p>
-<ul>
-<li><code>True</code>: if <code>j</code> can be written as a sum of a subset of <code>A[1..i]</code></li>
-<li><code>False</code>: otherwise</li>
-</ul>
-<p><code>SS[i, j] = SS[i-1, j] or SS[i-1, j-A[i]]</code></p>
-<h3 id="pseudocode">Pseudocode</h3>
-<h3 id="naive-recursion-1">Naive Recursion</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function SS(s;;A[<span class="number">1.</span>.n]):</span><br><span class="line">    <span class="keyword">if</span> n = <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> s = <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> SS(s, A[<span class="number">1.</span>.n<span class="number">-1</span>]) <span class="keyword">or</span> SS(s-A[n], A[<span class="number">1.</span>.n<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
-<h3 id="dp">DP</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function SSS(s;; A[<span class="number">1.</span>.n]):</span><br><span class="line">    SS[<span class="number">0.</span>.N, <span class="number">0.</span>.S] filled <span class="keyword">with</span> <span class="keyword">False</span></span><br><span class="line">    SS[<span class="number">0</span>, <span class="number">0</span>] = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">1</span> to n:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> <span class="number">0</span> to S:</span><br><span class="line">            SS[i, j] = SS[i<span class="number">-1</span>, j] <span class="keyword">or</span> SS[i<span class="number">-1</span>, j-A[i]]</span><br><span class="line">            <span class="comment"># attention! check j &gt; A[i]</span></span><br><span class="line">    <span class="keyword">return</span> SS[n, S]</span><br></pre></td></tr></table></figure>
-<table>
-<tbody>
-<tr class="odd">
-<td>i/j</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>T</td>
-<td>F</td>
-<td>F</td>
-<td>F</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>T</td>
-<td>T</td>
-<td>F</td>
-<td>F</td>
-<td>F</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-<td>F</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-<td>F</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3742,7 +3741,7 @@ complexity <span class="math inline">\(= O(1)\times2(n+1) = O(n)\)</span></p>
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

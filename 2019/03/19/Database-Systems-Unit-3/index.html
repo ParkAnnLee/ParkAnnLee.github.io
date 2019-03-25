@@ -97,17 +97,19 @@
 
 
   <meta name="description" content="Introduction The basic “data type”, or a “variable” of a relational database, is a relation. In this unit, such a variable will be a set. Later, we will extend this, and such a variable will be a m">
-<meta name="keywords" content="notes,class,Database Systems,nyu">
+<meta name="keywords" content="notes,class,nyu,Database Systems">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Database Systems Unit 3">
 <meta property="og:url" content="http://yoursite.com/2019/03/19/Database-Systems-Unit-3/index.html">
 <meta property="og:site_name" content="Anpu&#39;s Blog">
 <meta property="og:description" content="Introduction The basic “data type”, or a “variable” of a relational database, is a relation. In this unit, such a variable will be a set. Later, we will extend this, and such a variable will be a m">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-19T19:01:16.859Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/19/Database-Systems-Unit-3/Relation_1.png">
+<meta property="og:updated_time" content="2019-03-25T15:57:58.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Database Systems Unit 3">
 <meta name="twitter:description" content="Introduction The basic “data type”, or a “variable” of a relational database, is a relation. In this unit, such a variable will be a set. Later, we will extend this, and such a variable will be a m">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/19/Database-Systems-Unit-3/Relation_1.png">
 
 
 
@@ -400,12 +402,24 @@
                 
               
 
-              <time title="Created: 2019-03-19 14:55:25 / Modified: 15:01:16" itemprop="dateCreated datePublished" datetime="2019-03-19T14:55:25-04:00">2019-03-19</time>
+              <time title="Created: 2019-03-19 14:55:25" itemprop="dateCreated datePublished" datetime="2019-03-19T14:55:25-04:00">2019-03-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-25 11:57:58" itemprop="dateModified" datetime="2019-03-25T11:57:58-04:00">2019-03-25</time>
               
             
           </span>
@@ -496,6 +510,67 @@ Note: in many places you will read: “an element can appear in a set at most on
 <ul>
 <li>This is not quite right. And it is important not to assume this, as we will see in a later unit</li>
 </ul>
+<h1 id="relations">Relations</h1>
+<p>Consider a table, with a fixed number of columns where the elements of each column are drawn from some specific domain. The columns are labeled and the labels are distinct.</p>
+<p>We will consider such a table to be <strong>a set of rows</strong> (another word for “row” in our context: <strong>tuple</strong>).</p>
+<p>An example of a table S of two columns A and B</p>
+<img src="/2019/03/19/Database-Systems-Unit-3/Relation_1.png">
+<p>A <strong>relation</strong> is such a table<br>
+We will also write S(A,B) for table S with columns A and B.</p>
+<h2 id="relation-schema">Relation Schema</h2>
+<p>What we saw was an <strong>instance</strong> (current value for a relation with the defined columns and domains).</p>
+<p>To specify this relation in general (not the specific instance) we need to talk about a <strong>relational schema</strong>.<br>
+A relational schema defines a set of relations.</p>
+<p>In databases everything is finite, so a relational schema defines a finite set of finite relations.</p>
+<p>Here is an informal, but complete, description what a relational schema of one relation is<br>
+We want to define a structure for some table</p>
+<ol type="1">
+<li>We give it a name (we had S)</li>
+<li>We chose the number of columns (we had 2) and give them distinct names (we had A and B)</li>
+<li>We decide on the domains of elements in the columns (we had letters for A and integers for B)</li>
+<li>We decide on constraints, if any, on the permitted values (for example, we can assume as it was true for our example that any two rows that are equal on A must be equal on B)</li>
+</ol>
+<h1 id="keys">Keys</h1>
+<p>We will specify generally, as suitable for the schema:</p>
+<ul>
+<li><strong>Primary keys</strong></li>
+<li><strong>Keys</strong> (beyond primary)</li>
+<li><strong>Foreign keys</strong> and what they reference (we will see soon what this means)</li>
+</ul>
+<p>The above are most important <strong>structurally</strong>. Later, especially when we talk about SQL DDL, we will specify additional properties and constraints. For example, the height of a person has to be positive, if it is known. Some of the constraints may involve more than one relation.</p>
+<p>A set of columns in a relation is a <strong>superkey</strong> if and only any two tuples that are equal on the elements of these columns are (completely equal).<br>
+<strong>A relation always has at least one superkey</strong><br>
+The set of all the attributes is a superkey.<br>
+A minimal superkey, is a <strong>key</strong>.<br>
+A relation always has at least one key (start with any superkey and remove unnecessary columns)<br>
+There may be more than one key <strong>Exactly one</strong> key is chosen as <strong>primary key</strong> (there is no formal way to decide which one)<br>
+Other keys are just keys and sometimes they are called <strong>candidate keys</strong> (as they are candidates for the primary key, though not chosen)</p>
+<h2 id="superkey">Superkey</h2>
+<p>A set of columns whose values determine the values of all the columns in a row for every instance of the relation</p>
+<ul>
+<li>All the columns form a superkey (trivially)</li>
+<li>Superkeys are only used in formal definitions</li>
+</ul>
+<h2 id="key">Key</h2>
+<p>A set of columns whose values determine the values of all the columns in a row for every instance of the relation, <strong>but any proper subset of that set of columns does not do that</strong></p>
+<h2 id="primary-key">Primary Key</h2>
+<p>A chosen key. Important: <strong>no attribute of a primary key can be NULL</strong> (the value of every attribute must be always known); why will be discussed later</p>
+<h1 id="relational-databases">Relational Databases</h1>
+<p>A relational database is “basically” a set of tables with values drawn from specified domains, specified using a relational schema.</p>
+<p>This is formally correct, but it is misleading in reality As we will see soon, a better way to define a relational database is to say that it is</p>
+<ul>
+<li>A set of relations</li>
+<li>A set of binary, many-to-one mappings between them (partial functions), mimicking child-to-parent relationships Looking from the “other side,” they are one-to-many, mimicking parent-to-child relationships</li>
+<li>Some other, less fundamental, components ignored for now</li>
+</ul>
+<h1 id="from-er-diagram-to-relational-database-key-concepts-with-examples">From ER Diagram to Relational DatabaseKey Concepts With Examples</h1>
+<p>We are now ready to convert ER diagrams into relational databases<br>
+Generally, but not always</p>
+<ul>
+<li>An entity set is converted into a table</li>
+<li>A relationship is converted into a table</li>
+<li>This is logical design, though some call it physical design</li>
+</ul>
 
       
     </div>
@@ -523,9 +598,9 @@ Note: in many places you will read: “an element can appear in a set at most on
           
             <a href="/tags/class/" rel="tag"># class</a>
           
-            <a href="/tags/Database-Systems/" rel="tag"># Database Systems</a>
-          
             <a href="/tags/nyu/" rel="tag"># nyu</a>
+          
+            <a href="/tags/Database-Systems/" rel="tag"># Database Systems</a>
           
         </div>
       
@@ -547,6 +622,10 @@ Note: in many places you will read: “an element can appear in a set at most on
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/25/Sorting/" rel="prev" title="Sorting">
+                Sorting <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -625,7 +704,7 @@ Note: in many places you will read: “an element can appear in a set at most on
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -727,7 +806,7 @@ Note: in many places you will read: “an element can appear in a set at most on
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sets"><span class="nav-number">2.</span> <span class="nav-text">Sets</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sets"><span class="nav-number">2.</span> <span class="nav-text">Sets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#relations"><span class="nav-number">3.</span> <span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#relation-schema"><span class="nav-number">3.1.</span> <span class="nav-text">Relation Schema</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keys"><span class="nav-number">4.</span> <span class="nav-text">Keys</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#superkey"><span class="nav-number">4.1.</span> <span class="nav-text">Superkey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#key"><span class="nav-number">4.2.</span> <span class="nav-text">Key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#primary-key"><span class="nav-number">4.3.</span> <span class="nav-text">Primary Key</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#relational-databases"><span class="nav-number">5.</span> <span class="nav-text">Relational Databases</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#from-er-diagram-to-relational-database-key-concepts-with-examples"><span class="nav-number">6.</span> <span class="nav-text">From ER Diagram to Relational DatabaseKey Concepts With Examples</span></a></li></ol></div>
             
 
           </div>
