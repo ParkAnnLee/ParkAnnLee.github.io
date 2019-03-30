@@ -96,25 +96,27 @@
 
 
 
-  <meta name="description" content="Divide &amp;amp; Conquer Example: Binary Search Given sorted A[1..n] and number x. Find out whether A contains x. Complexity: \(O(\log{n})\) Sorting Input Array A[1..n] of numbers Output Sorted A[">
-<meta name="keywords" content="notes,class,basic algorithms,nyu">
+  <meta name="description" content="Getting Closure in Valuation A publicly traded firm potentially has an infinite life. The value is therefore the present value of cash flows forever. \[Value = \sum_{t=1}^\infty \frac{CF_t}{(1+r)^t}">
+<meta name="keywords" content="notes,nyu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sorting">
-<meta property="og:url" content="http://yoursite.com/2019/03/25/Sorting/index.html">
+<meta property="og:title" content="Closure in Valuation">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/Closure-in-Valuation/index.html">
 <meta property="og:site_name" content="Anpu&#39;s Blog">
-<meta property="og:description" content="Divide &amp;amp; Conquer Example: Binary Search Given sorted A[1..n] and number x. Find out whether A contains x. Complexity: \(O(\log{n})\) Sorting Input Array A[1..n] of numbers Output Sorted A[">
+<meta property="og:description" content="Getting Closure in Valuation A publicly traded firm potentially has an infinite life. The value is therefore the present value of cash flows forever. \[Value = \sum_{t=1}^\infty \frac{CF_t}{(1+r)^t}">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-27T15:12:46.121Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/30/Closure-in-Valuation/closure_1.png">
+<meta property="og:updated_time" content="2019-03-30T23:48:58.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sorting">
-<meta name="twitter:description" content="Divide &amp;amp; Conquer Example: Binary Search Given sorted A[1..n] and number x. Find out whether A contains x. Complexity: \(O(\log{n})\) Sorting Input Array A[1..n] of numbers Output Sorted A[">
+<meta name="twitter:title" content="Closure in Valuation">
+<meta name="twitter:description" content="Getting Closure in Valuation A publicly traded firm potentially has an infinite life. The value is therefore the present value of cash flows forever. \[Value = \sum_{t=1}^\infty \frac{CF_t}{(1+r)^t}">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/30/Closure-in-Valuation/closure_1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/25/Sorting/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/30/Closure-in-Valuation/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>Sorting | Anpu's Blog</title>
+  <title>Closure in Valuation | Anpu's Blog</title>
   
 
 
@@ -357,7 +359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/Sorting/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/Closure-in-Valuation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anpu Li">
@@ -374,7 +376,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sorting
+          <h1 class="post-title" itemprop="name headline">Closure in Valuation
 
               
             
@@ -400,24 +402,12 @@
                 
               
 
-              <time title="Created: 2019-03-25 11:56:57" itemprop="dateCreated datePublished" datetime="2019-03-25T11:56:57-04:00">2019-03-25</time>
+              <time title="Created: 2019-03-30 18:57:21 / Modified: 19:48:58" itemprop="dateCreated datePublished" datetime="2019-03-30T18:57:21-04:00">2019-03-30</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-27 11:12:46" itemprop="dateModified" datetime="2019-03-27T11:12:46-04:00">2019-03-27</time>
               
             
           </span>
@@ -434,7 +424,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Equity-Valuation/" itemprop="url" rel="index"><span itemprop="name">Equity Valuation</span></a></span>
 
                 
                 
@@ -453,8 +443,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/03/25/Sorting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/25/Sorting/" itemprop="commentCount"></span>
+                <a href="/2019/03/30/Closure-in-Valuation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/30/Closure-in-Valuation/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,31 +479,245 @@
       
 
       
-        <h1 id="divide-conquer">Divide &amp; Conquer</h1>
-<h2 id="example-binary-search">Example: Binary Search</h2>
-<p>Given sorted <code>A[1..n]</code> and number <code>x</code>. Find out whether <code>A</code> contains <code>x</code>.</p>
-<p>Complexity: <span class="math inline">\(O(\log{n})\)</span></p>
-<h1 id="sorting">Sorting</h1>
-<h3 id="input">Input</h3>
-<p>Array <code>A[1..n]</code> of numbers</p>
-<h3 id="output">Output</h3>
-<p>Sorted <code>A[1..n]</code> in <strong>ascending</strong> order</p>
-<h2 id="merge-sort">Merge Sort</h2>
-<h3 id="merge">Merge</h3>
-<p>Suppose we have two sorted arrays:<br>
-B: 1, 5, 12<br>
-C: 2, 3, 7</p>
-<p>and we want to combine the two arrays to get 1, 2, 3, 5, 7, 12</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(L, R)</span>:</span></span><br><span class="line">    i = j = <span class="number">0</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">while</span> i &lt; len(L) <span class="keyword">and</span> j &lt; len(R):</span><br><span class="line">        <span class="keyword">if</span> L[i] &lt;= R[j]:</span><br><span class="line">            result.append(L[i])</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result.append(R[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(L):</span><br><span class="line">        result.append(L[i])</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; len(R):</span><br><span class="line">        result.append(R[j])</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<p>The complexity is <span class="math inline">\(O(m+n), m = len(L), n = len(R)\)</span></p>
-<h3 id="sort">Sort</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(A) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> A</span><br><span class="line">    m = len(A) // <span class="number">2</span></span><br><span class="line">    L = merge_sort(A[:m])</span><br><span class="line">    R = merge_sort(A[m:])</span><br><span class="line">    <span class="keyword">return</span> merge(L, R)</span><br></pre></td></tr></table></figure>
-<h3 id="complexity-analysis">Complexity Analysis</h3>
-<p><span class="math inline">\(T(n) = 2\times T(\frac{n}{2}) + \Theta(n)\)</span><br>
-<span class="math inline">\(T(n) = \log_2{n}\times\Theta(n) = O(n\log{n})\)</span></p>
-<p>What if<br>
-<span class="math inline">\(T(n) = 2\times T(\frac{n}{2}) + n^2\)</span><br>
-<span class="math inline">\(T(n) = n^2\times\frac{1-\frac{1}{2}^{\log_2{n}}}{1-\frac{1}{2}} = O(n^2)\)</span></p>
+        <h1 id="getting-closure-in-valuation">Getting Closure in Valuation</h1>
+<p>A publicly traded firm potentially has an infinite life. The value is therefore the present value of cash flows forever.</p>
+<p><span class="math display">\[Value = \sum_{t=1}^\infty \frac{CF_t}{(1+r)^t}\]</span></p>
+<p>Since we cannot estimate cash flows forever, we estimate cash flows for a “growth period” and then estimate a terminal value, to capture the value at the end of the period:</p>
+<p><span class="math display">\[Value = \sum_{t=1}^N \frac{CF_t}{(1+r)^t} + \frac{Terminal\ Value}{(1+r)^N}\]</span></p>
+<h1 id="ways-of-estimating-terminal-value">Ways of Estimating Terminal Value</h1>
+<img src="/2019/03/30/Closure-in-Valuation/closure_1.png">
+<h1 id="obey-the-growth-cap">Obey the Growth Cap</h1>
+<p>When a firm’s cash flows grow at a “constant” rate forever, the present value of those cash flows can be written as:</p>
+<p><span class="math inline">\(\text{Value} = \frac{\text{Expected Cash Flow Next Period}}{r - g}\)</span></p>
+<p>where,</p>
+<ul>
+<li>r = Discount rate (Cost of Equity or Cost of Capital)</li>
+<li>g = Expected growth rate</li>
+</ul>
+<p>The stable growth rate cannot exceed the growth rate of the economy but it can be set lower.</p>
+<p>If you assume that the economy is composed of high growth and stable growth firms, the growth rate of the latter will probably be lower than the growth rate of the economy.</p>
+<p>The stable growth rate can be negative. The terminal value will be lower and you are assuming that your firm will disappear over time.</p>
+<p>If you use nominal cashflows and discount rates, the growth rate should be nominal in the currency in which the valuation is denominated.</p>
+<p>One simple proxy for the nominal growth rate of the economy is the riskfree rate.</p>
+<h2 id="risk-free-rates-and-nominal-gdp-growth">Risk free Rates and Nominal GDP Growth</h2>
+<ul>
+<li><strong>Risk free Rate</strong> = Expected Inflation + Expected Real Interest Rate<br>
+The real interest rate is what borrowers agree to return to lenders in real goods/services.</li>
+<li><strong>Nominal GDP Growth</strong> = Expected Inflation + Expected Real Growth<br>
+The real growth rate in the economy measures the expected growth in the production of goods and services.</li>
+</ul>
+<p>The argument for Risk free rate = Nominal GDP growth</p>
+<ol type="1">
+<li>In the long term, the real growth rate <strong><em>cannot be lower</em></strong> than the real interest rate, since the growth in goods/services has to be enough to cover the promised rate.</li>
+<li>In the long term, the real growth rate <strong><em>can be higher</em></strong> than the real interest rate, to compensate risk taking. However, as economies mature, the difference should get smaller and since there will be growth companies in the economy, it is prudent to assume that the extra growth comes from these companies.</li>
+</ol>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 21%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>10-Year T.Bond Rate</th>
+<th>Inflation Rate</th>
+<th>Real GDP Growth</th>
+<th>Nominal GDP growth rate</th>
+<th>Nominal GDP - T.Bond Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1954-2015</td>
+<td>5.93%</td>
+<td>3.61%</td>
+<td>3.06%</td>
+<td>6.67%</td>
+<td>0.74%</td>
+</tr>
+<tr class="even">
+<td>1954-1980</td>
+<td>5.83%</td>
+<td>4.49%</td>
+<td>3.50%</td>
+<td>7.98%</td>
+<td>2.15%</td>
+</tr>
+<tr class="odd">
+<td>1981-2008</td>
+<td>6.88%</td>
+<td>3.26%</td>
+<td>3.04%</td>
+<td>6.30%</td>
+<td>-0.58%</td>
+</tr>
+<tr class="even">
+<td>2009-2015</td>
+<td>2.57%</td>
+<td>1.66%</td>
+<td>1.47%</td>
+<td>3.14%</td>
+<td>0.57%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-practical-reason-for-using-the-risk-free-rate-cap-preserve-consistency">A Practical Reason for using the Risk free Rate Cap – Preserve Consistency</h2>
+<p>You are implicitly making assumptions about nominal growth in the economy, with your risk free rate. Thus, with a low risk free rate, you are assuming low nominal growth in the economy (with low inflation and low real growth) and with a high risk free rate, a high nominal growth rate in the economy.</p>
+<p>If you make an explicit assumption about nominal growth in cash flows that is at odds with your implicit growth assumption in the denominator, you are being inconsistent and bias your valuations:</p>
+<ul>
+<li>If you assume high nominal growth in the economy, with a low risk free rate, you will over value businesses.</li>
+<li>If you assume low nominal growth rate in the economy, with a high risk free rate, you will under value businesses.</li>
+</ul>
+<h1 id="dont-wait-too-long">Don’t wait too long</h1>
+<p>Assume that you are valuing a young, high growth firm with great potential, just after its initial public offering. How long would you set your high growth period?</p>
+<ol type="1">
+<li>&lt; 5 years</li>
+<li>5 years</li>
+<li><strong>10 years</strong></li>
+<li>&gt;10 years</li>
+</ol>
+<h2 id="and-tie-to-competitive-advantages">And tie to competitive advantages</h2>
+<p>While analysts routinely assume very long high growth periods (with substantial excess returns during the periods), the evidence suggests that they are much too optimistic. Most growth firms have difficulty sustaining their growth for long periods, especially while earning excess returns.</p>
+<p>Recapping a key lesson about growth, it is not growth per se that creates value but growth with excess returns. For growth firms to continue to generate value creating growth, they have to be able to keep the competition at bay.</p>
+<ul>
+<li>Proposition 1: The stronger and more sustainable the competitive advantages, the longer a growth company can sustain “value creating” growth.</li>
+<li>Proposition 2: Growth companies with strong and sustainable competitive advantages are rare.</li>
+</ul>
+<h3 id="notes-by-prof.-damodaran">Notes by Prof. Damodaran</h3>
+<p>Firms that grow for longer than 5 years are more the exception rather than the rule. We may be routinely over valuing growth companies as a consequence.</p>
+<p>As a consequence, I use only three growth periods in my DCF valuations:</p>
+<ol type="1">
+<li>Zero years, for firms that are already large and mature firms (Firms like Toyota and Exxon Mobil)</li>
+<li>5 years for firms that still retain moderate growth potential or significant competitive advantages.</li>
+<li>10 years for high growth firms.</li>
+</ol>
+<p>You do not want to value your firm to be the exception… That is asking for trouble..</p>
+<h1 id="dont-forget-that-growth-has-to-be-earned">Don’t forget that growth has to be earned</h1>
+<p>In the section on expected growth, we laid out the fundamental equation for growth:</p>
+<p><span class="math inline">\(\text{Growth Rate = Reinvestment Rate * Return on invested capital + Growth Rate from improved efficiency}\)</span></p>
+<p>In stable growth, you cannot count on efficiency delivering growth and you have to reinvest to deliver the growth rate that you have forecast.</p>
+<p>Consequently, your reinvestment rate in stable growth will be a function of your stable growth rate and what you believe the firm will earn as a return on capital in perpetuity:</p>
+<p>Reinvestment Rate = Stable growth rate/ Stable period ROC = g/ ROC</p>
+<p>Your terminal value equation can then be rewritten as:</p>
+<p><span class="math inline">\(\text{Terminal Value in year n} = \frac{EBIT_{n+1}(1−t)(1−\frac{g}{ROC})}{\text{Cost of Capital}−g}\)</span></p>
+<h2 id="the-big-assumption">The big assumption</h2>
+<p>Terminal value for a firm with expected after-tax operating income of <code>$100</code> million in year n+1 and a cost of capital of 10%.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th>Return</th>
+<th>on</th>
+<th>capital</th>
+<th>in</th>
+<th>perpetuity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>6%</td>
+<td>8%</td>
+<td>10%</td>
+<td>12%</td>
+<td>14%</td>
+</tr>
+<tr class="even">
+<td>Growth</td>
+<td>0.00%</td>
+<td>$1,000</td>
+<td>$1,000</td>
+<td>$1,000</td>
+<td>$1,000</td>
+<td>$1,000</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>0.50%</td>
+<td>$965</td>
+<td>$987</td>
+<td>$1,000</td>
+<td>$1,009</td>
+<td>$1,015</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>1.00%</td>
+<td>$926</td>
+<td>$972</td>
+<td>$1,000</td>
+<td>$1,019</td>
+<td>$1,032</td>
+</tr>
+<tr class="odd">
+<td>rate</td>
+<td>1.50%</td>
+<td>$882</td>
+<td>$956</td>
+<td>$1,000</td>
+<td>$1,029</td>
+<td>$1,050</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>2.00%</td>
+<td>$833</td>
+<td>$938</td>
+<td>$1,000</td>
+<td>$1,042</td>
+<td>$1,071</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>2.50%</td>
+<td>$778</td>
+<td>$917</td>
+<td>$1,000</td>
+<td>$1,056</td>
+<td>$1,095</td>
+</tr>
+<tr class="even">
+<td>forever</td>
+<td>3.00%</td>
+<td>$714</td>
+<td>$893</td>
+<td>$1,000</td>
+<td>$1,071</td>
+<td>$1,122</td>
+</tr>
+</tbody>
+</table>
+<p>Note that when the return on capital is equal to the cost of capital, the terminal value is invariant to growth. If it is set above the cost of capital, terminal value increases with growth and if set below, it decreases. The big assumption in your terminal value calculation in the one you make about excess returns in perpetuity, not the growth rate.</p>
+<h2 id="excess-returns-to-zero">Excess Returns to Zero?</h2>
+<p>There are some (McKinsey, for instance) who argue that the return on capital should always be equal to cost of capital in stable growth.<br>
+But excess returns seem to persist for very long time periods.</p>
+<p>There are some DCF practitioners who argue that the only excess return consistent with being a mature firm is zero. While that may make logical sense, it will then require you to forecast cash flows until excess returns become zero (rather than until the growth rate becomes stable).</p>
+<p>In reality, firms that have earned excess returns in the past seem to have more success in holding on to excess returns. In other words, an assessment of strategic advantages and barriers to entry may be more relevant to good valuation than the focus on earnings growth.</p>
+<p>Bottom line: If you adopt growth periods of 5 or 10 years, there are some firms with exceptional and sustainable competitive advantages that can sustain excess returns for far longer. For these firms, it is prudent to let the excess returns be positive in perpetuity (i.e., let the ROC in stable growth exceed the cost of capital). However, those excess returns should be moderate (my rule of thumb is to not let them exceed 2-3%.</p>
+<h2 id="and-dont-fall-for-sleight-of-hand">And don’t fall for sleight of hand…</h2>
+<p>A typical assumption in many DCF valuations, when it comes to stable growth, is that capital expenditures offset depreciation and there are no working capital needs. Stable growth firms, we are told, just have to make maintenance cap ex (replacing existing assets ) to deliver growth. If you make this assumption, what expected growth rate can you use in your terminal value computation?</p>
+<p>What if the stable growth rate = inflation rate? Is it okay to make this assumption then?</p>
+<p>The only growth rate that is consistent with this assumption is zero. Even if you set the growth rate = inflation rate, replacing existing assets will cost you more than the depreciation on those assets. Hence you will need to follow the equation on the last page to get to a reinvestment rate.</p>
+<h1 id="be-internally-consistent">Be internally consistent</h1>
+<p>Risk and costs of equity and capital: Stable growth firms tend to</p>
+<ol type="1">
+<li>Have betas closer to one</li>
+<li>Have debt ratios closer to industry averages (or mature company averages)</li>
+<li>Country risk premiums (especially in emerging markets should evolve over time)</li>
+</ol>
+<p>The excess returns at stable growth firms should approach (or become) zero.<br>
+ROC -&gt; Cost of capital and ROE -&gt; Cost of equity</p>
+<p>The reinvestment needs and dividend payout ratios should reflect the lower growth and excess returns:</p>
+<ul>
+<li>Stable period payout ratio = 1 - g/ ROE</li>
+<li>Stable period reinvestment rate = g/ ROC</li>
+</ul>
 
       
     </div>
@@ -539,10 +743,6 @@ C: 2, 3, 7</p>
           
             <a href="/tags/notes/" rel="tag"># notes</a>
           
-            <a href="/tags/class/" rel="tag"># class</a>
-          
-            <a href="/tags/basic-algorithms/" rel="tag"># basic algorithms</a>
-          
             <a href="/tags/nyu/" rel="tag"># nyu</a>
           
         </div>
@@ -556,8 +756,8 @@ C: 2, 3, 7</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/19/Database-Systems-Unit-3/" rel="next" title="Database Systems Unit 3">
-                <i class="fa fa-chevron-left"></i> Database Systems Unit 3
+              <a href="/2019/03/27/Multiplication/" rel="next" title="Multiplication">
+                <i class="fa fa-chevron-left"></i> Multiplication
               </a>
             
           </div>
@@ -566,8 +766,8 @@ C: 2, 3, 7</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/27/Multiplication/" rel="prev" title="Multiplication">
-                Multiplication <i class="fa fa-chevron-right"></i>
+              <a href="/2100/03/18/Contents/" rel="prev" title="Contents">
+                Contents <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -749,7 +949,7 @@ C: 2, 3, 7</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#divide-conquer"><span class="nav-number">1.</span> <span class="nav-text">Divide &amp; Conquer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#example-binary-search"><span class="nav-number">1.1.</span> <span class="nav-text">Example: Binary Search</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sorting"><span class="nav-number">2.</span> <span class="nav-text">Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">2.0.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output"><span class="nav-number">2.0.2.</span> <span class="nav-text">Output</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-sort"><span class="nav-number">2.1.</span> <span class="nav-text">Merge Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#merge"><span class="nav-number">2.1.1.</span> <span class="nav-text">Merge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">2.1.2.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity-analysis"><span class="nav-number">2.1.3.</span> <span class="nav-text">Complexity Analysis</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#getting-closure-in-valuation"><span class="nav-number">1.</span> <span class="nav-text">Getting Closure in Valuation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ways-of-estimating-terminal-value"><span class="nav-number">2.</span> <span class="nav-text">Ways of Estimating Terminal Value</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#obey-the-growth-cap"><span class="nav-number">3.</span> <span class="nav-text">Obey the Growth Cap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#risk-free-rates-and-nominal-gdp-growth"><span class="nav-number">3.1.</span> <span class="nav-text">Risk free Rates and Nominal GDP Growth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-practical-reason-for-using-the-risk-free-rate-cap-preserve-consistency"><span class="nav-number">3.2.</span> <span class="nav-text">A Practical Reason for using the Risk free Rate Cap – Preserve Consistency</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dont-wait-too-long"><span class="nav-number">4.</span> <span class="nav-text">Don’t wait too long</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#and-tie-to-competitive-advantages"><span class="nav-number">4.1.</span> <span class="nav-text">And tie to competitive advantages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#notes-by-prof.-damodaran"><span class="nav-number">4.1.1.</span> <span class="nav-text">Notes by Prof. Damodaran</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dont-forget-that-growth-has-to-be-earned"><span class="nav-number">5.</span> <span class="nav-text">Don’t forget that growth has to be earned</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-big-assumption"><span class="nav-number">5.1.</span> <span class="nav-text">The big assumption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#excess-returns-to-zero"><span class="nav-number">5.2.</span> <span class="nav-text">Excess Returns to Zero?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#and-dont-fall-for-sleight-of-hand"><span class="nav-number">5.3.</span> <span class="nav-text">And don’t fall for sleight of hand…</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#be-internally-consistent"><span class="nav-number">6.</span> <span class="nav-text">Be internally consistent</span></a></li></ol></div>
             
 
           </div>
@@ -935,9 +1135,9 @@ C: 2, 3, 7</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/03/25/Sorting/";
-    this.page.identifier = "2019/03/25/Sorting/";
-    this.page.title = 'Sorting';
+    this.page.url = "http://yoursite.com/2019/03/30/Closure-in-Valuation/";
+    this.page.identifier = "2019/03/30/Closure-in-Valuation/";
+    this.page.title = 'Closure in Valuation';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

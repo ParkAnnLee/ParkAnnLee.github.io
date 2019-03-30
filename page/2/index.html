@@ -356,6 +356,312 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/Word-Wrap-Problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anpu Li">
+      <meta itemprop="description" content="Thoughts, Works, and Collection">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anpu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/27/Word-Wrap-Problem/" class="post-title-link" itemprop="url">Word Wrap Problem</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-27 12:10:32" itemprop="dateCreated datePublished" datetime="2019-02-27T12:10:32-05:00">2019-02-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-08 17:31:24" itemprop="dateModified" datetime="2019-03-08T17:31:24-05:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/02/27/Word-Wrap-Problem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/27/Word-Wrap-Problem/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="word-wrap-problem">Word Wrap Problem</h1>
+<h2 id="example">Example</h2>
+<h3 id="input-text">Input Text:</h3>
+<p>"Why is it long?"</p>
+<h3 id="restriction">Restriction:</h3>
+<p>Each line is 6 characters long</p>
+<h3 id="output">Output</h3>
+<table>
+<thead>
+<tr class="header">
+<th>W</th>
+<th>h</th>
+<th>y</th>
+<th></th>
+<th>i</th>
+<th>s</th>
+<th></th>
+<th>W</th>
+<th>h</th>
+<th>y</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>i</td>
+<td>t</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>i</td>
+<td>s</td>
+<td></td>
+<td>i</td>
+<td>t</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>l</td>
+<td>o</td>
+<td>n</td>
+<td>g</td>
+<td>?</td>
+<td></td>
+<td></td>
+<td>l</td>
+<td>o</td>
+<td>n</td>
+<td>g</td>
+<td>?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The right one is nicer.</p>
+<h2 id="what-is-nicer">What is "nicer"?</h2>
+<h3 id="notation">Notation</h3>
+<p><span class="math inline">\(e_i - \text{the number of spaces at the end of the i-th line}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>formula</th>
+<th>1st</th>
+<th>2nd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\sum e_i\)</span></td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sum e_i^2\)</span></td>
+<td>17</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sum e_i^3\)</span></td>
+<td>65</td>
+<td>29</td>
+</tr>
+<tr class="even">
+<td>max</td>
+<td>4</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The convention is to use <span class="math inline">\(\sum e_i^3\)</span>.</p>
+<h2 id="problem">Problem</h2>
+<h3 id="input">Input</h3>
+<ul>
+<li><code>w</code> - width of a line</li>
+<li><code>A[1..n]</code> of words</li>
+</ul>
+<h3 id="output-1">Output</h3>
+<p>an array of arrays of words, where each array fits into one line such that the penalty is the smallest</p>
+<h3 id="example-1">Example</h3>
+<h4 id="input-1">Input</h4>
+<ul>
+<li><code>w = 6</code></li>
+<li><code>A = ["Why", "is", "it", "long?"]</code></li>
+</ul>
+<h4 id="output-2">Output</h4>
+<p><code>[ ["Why"], ["is", "it"], ["long?"] ]</code></p>
+<h2 id="solution">Solution</h2>
+<h3 id="notation-1">Notation</h3>
+<h4 id="ci">C(i)</h4>
+<p>the minimum possible penalty for <code>A[1..i]</code> <code>C(0) = 0</code> We are interested in <code>C(n)</code>.</p>
+<h4 id="feej-i">fee[j, i]</h4>
+<p>The penalty for line <code>A[j]..A[i]</code> <span class="math inline">\(\begin{align*}  fee[j, i] &amp;= (w - \sum_{k=j}^{i} A[k] - (i-j))^3 \\  &amp;= \infty \text{  if the above is negative} \\ \end{align*}\)</span></p>
+<p><code>C(i) = min(C(j-1) + fee[j, i])</code></p>
+<h3 id="pseudocode">Pseudocode</h3>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function FindMinPenalty(w;;A[<span class="number">1.</span>.n])</span><br><span class="line">    C[<span class="number">0.</span>.n] filled <span class="keyword">with</span> inf</span><br><span class="line">    Compute fee[<span class="number">1.</span>.n][<span class="number">1.</span>.n]</span><br><span class="line">    C[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">1</span> to n</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> <span class="number">1</span> to i</span><br><span class="line">            C[i] = min(C[i], C[j<span class="number">-1</span>] + fee[j,i])</span><br><span class="line">    <span class="keyword">return</span> C[n]</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function ComputeFee():</span><br><span class="line">    fee[<span class="number">1.</span>.n][<span class="number">1.</span>.n] filled <span class="keyword">with</span> inf</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">1</span> to n</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> <span class="number">1</span> to i</span><br><span class="line">            spaces = w</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">from</span> j to i</span><br><span class="line">                spaces -= A[k]</span><br><span class="line">            spaces -= (i-j)</span><br><span class="line">            <span class="keyword">if</span> spaces &gt;= <span class="number">0</span></span><br><span class="line">                fee[j, i] = spaces^<span class="number">3</span></span><br><span class="line">    <span class="keyword">return</span> fee</span><br></pre></td></tr></table></figure>
+<p>We see the complexity of the above is too much. <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function ComputeFee():</span><br><span class="line">    spaces[<span class="number">1.</span>.n][<span class="number">1.</span>.n] filled <span class="keyword">with</span> inf</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">from</span> <span class="number">1</span> to n</span><br><span class="line">        spaces[i, i] = w - |A[i]|</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">from</span> i<span class="number">-1</span> to <span class="number">1</span></span><br><span class="line">            spaces[j, i] = spaces[j+<span class="number">1</span>, i] - |A[j]| - <span class="number">1</span></span><br><span class="line">            fee[j, i] = spaces[j, i]^<span class="number">3</span> <span class="keyword">if</span> spaces[j ,i] &gt; <span class="number">0</span> <span class="keyword">else</span> inf</span><br><span class="line">    <span class="keyword">return</span> fee</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Largest-Common-Subsequence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1690,7 +1996,7 @@ number of multiplications <span class="math inline">\(\leq 2\times log_2{m} + 4\
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1974,6 +2280,8 @@ number of multiplications <span class="math inline">\(\leq 2\times log_2{m} + 4\
 
   
   
+    
+      
     
       
     

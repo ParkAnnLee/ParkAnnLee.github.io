@@ -96,25 +96,24 @@
 
 
 
-  <meta name="description" content="Divide &amp;amp; Conquer Example: Binary Search Given sorted A[1..n] and number x. Find out whether A contains x. Complexity: \(O(\log{n})\) Sorting Input Array A[1..n] of numbers Output Sorted A[">
-<meta name="keywords" content="notes,class,basic algorithms,nyu">
+  <meta name="description" content="Computer Science Basic Algorithms  Recursion Dynamic Programming Word Wrap Problem Largest Common Subsequence Knapsack Problem Sorting Multiplication  Database Systems  Database Systems U">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sorting">
-<meta property="og:url" content="http://yoursite.com/2019/03/25/Sorting/index.html">
+<meta property="og:title" content="Contents">
+<meta property="og:url" content="http://yoursite.com/2100/03/18/Contents/index.html">
 <meta property="og:site_name" content="Anpu&#39;s Blog">
-<meta property="og:description" content="Divide &amp;amp; Conquer Example: Binary Search Given sorted A[1..n] and number x. Find out whether A contains x. Complexity: \(O(\log{n})\) Sorting Input Array A[1..n] of numbers Output Sorted A[">
+<meta property="og:description" content="Computer Science Basic Algorithms  Recursion Dynamic Programming Word Wrap Problem Largest Common Subsequence Knapsack Problem Sorting Multiplication  Database Systems  Database Systems U">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-27T15:12:46.121Z">
+<meta property="og:updated_time" content="2019-03-30T23:08:11.664Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sorting">
-<meta name="twitter:description" content="Divide &amp;amp; Conquer Example: Binary Search Given sorted A[1..n] and number x. Find out whether A contains x. Complexity: \(O(\log{n})\) Sorting Input Array A[1..n] of numbers Output Sorted A[">
+<meta name="twitter:title" content="Contents">
+<meta name="twitter:description" content="Computer Science Basic Algorithms  Recursion Dynamic Programming Word Wrap Problem Largest Common Subsequence Knapsack Problem Sorting Multiplication  Database Systems  Database Systems U">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/25/Sorting/">
+  <link rel="canonical" href="http://yoursite.com/2100/03/18/Contents/">
 
 
 
@@ -124,7 +123,7 @@
   };
 </script>
 
-  <title>Sorting | Anpu's Blog</title>
+  <title>Contents | Anpu's Blog</title>
   
 
 
@@ -357,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/Sorting/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2100/03/18/Contents/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anpu Li">
@@ -374,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Sorting
+          <h1 class="post-title" itemprop="name headline">Contents
 
               
             
@@ -400,7 +399,7 @@
                 
               
 
-              <time title="Created: 2019-03-25 11:56:57" itemprop="dateCreated datePublished" datetime="2019-03-25T11:56:57-04:00">2019-03-25</time>
+              <time title="Created: 2100-03-18 12:24:17" itemprop="dateCreated datePublished" datetime="2100-03-18T12:24:17-04:00">2100-03-18</time>
             
 
             
@@ -417,29 +416,11 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-27 11:12:46" itemprop="dateModified" datetime="2019-03-27T11:12:46-04:00">2019-03-27</time>
+                <time title="Modified: 2019-03-30 19:08:11" itemprop="dateModified" datetime="2019-03-30T19:08:11-04:00">2019-03-30</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Basic-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Basic Algorithms</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -453,8 +434,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/03/25/Sorting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/25/Sorting/" itemprop="commentCount"></span>
+                <a href="/2100/03/18/Contents/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2100/03/18/Contents/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,31 +470,34 @@
       
 
       
-        <h1 id="divide-conquer">Divide &amp; Conquer</h1>
-<h2 id="example-binary-search">Example: Binary Search</h2>
-<p>Given sorted <code>A[1..n]</code> and number <code>x</code>. Find out whether <code>A</code> contains <code>x</code>.</p>
-<p>Complexity: <span class="math inline">\(O(\log{n})\)</span></p>
-<h1 id="sorting">Sorting</h1>
-<h3 id="input">Input</h3>
-<p>Array <code>A[1..n]</code> of numbers</p>
-<h3 id="output">Output</h3>
-<p>Sorted <code>A[1..n]</code> in <strong>ascending</strong> order</p>
-<h2 id="merge-sort">Merge Sort</h2>
-<h3 id="merge">Merge</h3>
-<p>Suppose we have two sorted arrays:<br>
-B: 1, 5, 12<br>
-C: 2, 3, 7</p>
-<p>and we want to combine the two arrays to get 1, 2, 3, 5, 7, 12</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(L, R)</span>:</span></span><br><span class="line">    i = j = <span class="number">0</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">while</span> i &lt; len(L) <span class="keyword">and</span> j &lt; len(R):</span><br><span class="line">        <span class="keyword">if</span> L[i] &lt;= R[j]:</span><br><span class="line">            result.append(L[i])</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result.append(R[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(L):</span><br><span class="line">        result.append(L[i])</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j &lt; len(R):</span><br><span class="line">        result.append(R[j])</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<p>The complexity is <span class="math inline">\(O(m+n), m = len(L), n = len(R)\)</span></p>
-<h3 id="sort">Sort</h3>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(A) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> A</span><br><span class="line">    m = len(A) // <span class="number">2</span></span><br><span class="line">    L = merge_sort(A[:m])</span><br><span class="line">    R = merge_sort(A[m:])</span><br><span class="line">    <span class="keyword">return</span> merge(L, R)</span><br></pre></td></tr></table></figure>
-<h3 id="complexity-analysis">Complexity Analysis</h3>
-<p><span class="math inline">\(T(n) = 2\times T(\frac{n}{2}) + \Theta(n)\)</span><br>
-<span class="math inline">\(T(n) = \log_2{n}\times\Theta(n) = O(n\log{n})\)</span></p>
-<p>What if<br>
-<span class="math inline">\(T(n) = 2\times T(\frac{n}{2}) + n^2\)</span><br>
-<span class="math inline">\(T(n) = n^2\times\frac{1-\frac{1}{2}^{\log_2{n}}}{1-\frac{1}{2}} = O(n^2)\)</span></p>
+        <h1 id="computer-science">Computer Science</h1>
+<h2 id="basic-algorithms">Basic Algorithms</h2>
+<ol type="1">
+<li><a href="/2019/01/27/Recursion/" title="Recursion">Recursion</a></li>
+<li><a href="/2019/02/20/Dynamic-Programming/" title="Dynamic Programming">Dynamic Programming</a></li>
+<li><a href="/2019/02/27/Word-Wrap-Problem/" title="Word Wrap Problem">Word Wrap Problem</a></li>
+<li><a href="/2019/02/25/Largest-Common-Subsequence/" title="Largest Common Subsequence">Largest Common Subsequence</a></li>
+<li><a href="/2019/03/06/Knapsack-Problem/" title="Knapsack Problem">Knapsack Problem</a></li>
+<li><a href="/2019/03/25/Sorting/" title="Sorting">Sorting</a></li>
+<li><a href="/2019/03/27/Multiplication/" title="Multiplication">Multiplication</a></li>
+</ol>
+<h2 id="database-systems">Database Systems</h2>
+<ol type="1">
+<li><a href="/2019/03/18/Database-Systems-Unit-2/" title="Database Systems Unit 2">Database Systems Unit 2</a></li>
+<li><a href="/2019/03/19/Database-Systems-Unit-3/" title="The Relational Model: And From ER Diagrams to Relational Databases">The Relational Model: And From ER Diagrams to Relational Databases</a></li>
+</ol>
+<h2 id="computer-graphics">Computer Graphics</h2>
+<ul>
+<li><a href="../works" title="Works">See works for more</a></li>
+</ul>
+<h1 id="finance">Finance</h1>
+<h2 id="equity-valuation">Equity Valuation</h2>
+<ol type="1">
+<li><a href="/2019/03/01/Discount-Rates/" title="Discount Rates">Discount Rates</a></li>
+<li><a href="/2019/03/09/Estimating-Cash-Flows/" title="Estimating Cash Flows">Estimating Cash Flows</a></li>
+<li><a href="/2019/03/11/Growth/" title="Growth">Growth</a></li>
+<li><a href="/2019/03/30/Closure-in-Valuation/" title="Closure in Valuation">Closure in Valuation</a></li>
+</ol>
 
       
     </div>
@@ -535,18 +519,6 @@ C: 2, 3, 7</p>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/notes/" rel="tag"># notes</a>
-          
-            <a href="/tags/class/" rel="tag"># class</a>
-          
-            <a href="/tags/basic-algorithms/" rel="tag"># basic algorithms</a>
-          
-            <a href="/tags/nyu/" rel="tag"># nyu</a>
-          
-        </div>
-      
 
       
       
@@ -556,8 +528,8 @@ C: 2, 3, 7</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/19/Database-Systems-Unit-3/" rel="next" title="Database Systems Unit 3">
-                <i class="fa fa-chevron-left"></i> Database Systems Unit 3
+              <a href="/2019/03/30/Closure-in-Valuation/" rel="next" title="Closure in Valuation">
+                <i class="fa fa-chevron-left"></i> Closure in Valuation
               </a>
             
           </div>
@@ -565,10 +537,6 @@ C: 2, 3, 7</p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/27/Multiplication/" rel="prev" title="Multiplication">
-                Multiplication <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -749,7 +717,7 @@ C: 2, 3, 7</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#divide-conquer"><span class="nav-number">1.</span> <span class="nav-text">Divide &amp; Conquer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#example-binary-search"><span class="nav-number">1.1.</span> <span class="nav-text">Example: Binary Search</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sorting"><span class="nav-number">2.</span> <span class="nav-text">Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-number">2.0.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output"><span class="nav-number">2.0.2.</span> <span class="nav-text">Output</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-sort"><span class="nav-number">2.1.</span> <span class="nav-text">Merge Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#merge"><span class="nav-number">2.1.1.</span> <span class="nav-text">Merge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">2.1.2.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity-analysis"><span class="nav-number">2.1.3.</span> <span class="nav-text">Complexity Analysis</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#computer-science"><span class="nav-number">1.</span> <span class="nav-text">Computer Science</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-algorithms"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Algorithms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#database-systems"><span class="nav-number">1.2.</span> <span class="nav-text">Database Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#computer-graphics"><span class="nav-number">1.3.</span> <span class="nav-text">Computer Graphics</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#finance"><span class="nav-number">2.</span> <span class="nav-text">Finance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#equity-valuation"><span class="nav-number">2.1.</span> <span class="nav-text">Equity Valuation</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -935,9 +903,9 @@ C: 2, 3, 7</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/03/25/Sorting/";
-    this.page.identifier = "2019/03/25/Sorting/";
-    this.page.title = 'Sorting';
+    this.page.url = "http://yoursite.com/2100/03/18/Contents/";
+    this.page.identifier = "2100/03/18/Contents/";
+    this.page.title = 'Contents';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
